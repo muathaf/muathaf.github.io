@@ -3,131 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muathaf | DevOps & AI Foundations</title>
+    <title>Muathaf | DevOps & Cloud Automation Engineer</title>
     <!-- Use Inter font family -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* This is the new, dark-mode focused stylesheet */
         body { font-family: 'Inter', sans-serif; }
-        /* Professional Dark Mode Palette */
-        .dark { background-color: #030712; color: #f9fafb; }
-        .dark .bg-white { background-color: #111827 !important; }
-        .dark .text-gray-700 { color: #d1d5db; }
-        .dark .border-gray-200 { border-color: #374151; }
-        .dark .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2); }
         html { scroll-behavior: smooth; }
-        /* Subtle transition for project cards */
-        .card-hover-effect { transition: all 0.3s ease-in-out; }
-        /* New hover uses a subtle shadow for elevation */
-        .card-hover-effect:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(100, 116, 139, 0.15); }
-        .dark .card-hover-effect:hover { box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); }
+        
+        /* Define custom colors and settings in Tailwind config */
+        /* Note: Text colors are handled by the dark: prefix in classes */
+        .link-transition { transition: color 0.3s ease-in-out; }
+        
+        /* Specific transition for cards to prevent flashing */
+        .card-hover-effect { transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; }
+        .card-hover-effect:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 15px rgba(34, 211, 238, 0.2); /* Subtle glow effect on hover */
+            border-color: #22d3ee; /* Ring effect */
+        }
     </style>
     <script>
         tailwind.config = {
+            darkMode: 'class', // Enable dark mode using a class on the HTML element
             theme: {
                 extend: {
                     colors: {
-                        // New professional accent color: Slate Gray
-                        'primary-slate': '#475569',
-                        'primary-hover': '#334155',
+                        // Custom professional accent color: Electric Cyan
+                        'primary-cyan': '#22d3ee',
+                        'primary-hover': '#06b6d4',
+                        // Backgrounds use Tailwind's gray-900 for consistency
                     }
                 }
             }
         }
-        // Basic Dark Mode Toggle Logic
-        document.addEventListener('DOMContentLoaded', () => {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const savedTheme = localStorage.getItem('theme');
-            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-
-            if (theme === 'dark') {
-                document.documentElement.classList.add('dark');
-            }
-
-            document.getElementById('themeToggle').addEventListener('click', () => {
-                const isDark = document.documentElement.classList.toggle('dark');
-                localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            });
-        });
     </script>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
+<!-- Set the body to the dark theme immediately -->
+<body class="bg-gray-900 text-gray-100 transition-colors duration-500">
 
     <!-- Header & Navigation -->
-    <header class="sticky top-0 z-10 bg-white dark:bg-gray-800 shadow-lg border-b border-gray-200 dark:border-gray-700">
+    <header class="sticky top-0 z-10 bg-gray-900 shadow-xl border-b border-gray-800/50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
-                <!-- Changed logo color to the new slate accent -->
-                <a href="#" class="text-2xl font-bold text-primary-slate">Muathaf</a>
+                <!-- Logo uses the new Cyan accent -->
+                <a href="#" class="text-2xl font-bold text-primary-cyan link-transition">Muathaf</a>
                 <nav class="flex items-center space-x-6">
-                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary-slate transition duration-300 font-medium">About</a>
-                    <a href="#education" class="text-gray-700 dark:text-gray-300 hover:text-primary-slate transition duration-300 font-medium">Education</a>
-                    <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-primary-slate transition duration-300 font-medium">Skills</a>
-                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary-slate transition duration-300 font-medium">Projects</a>
-                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-slate transition duration-300 font-medium">Contact</a>
-                    <button id="themeToggle" class="p-2 rounded-full text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:ring-2 hover:ring-primary-slate transition duration-300" aria-label="Toggle dark mode">
-                        <span class="dark:hidden">☀️</span>
-                        <span class="hidden dark:inline-block">🌙</span>
-                    </button>
+                    <a href="#about" class="text-gray-300 hover:text-primary-cyan transition duration-300 font-medium link-transition">About</a>
+                    <a href="#education" class="text-gray-300 hover:text-primary-cyan transition duration-300 font-medium link-transition">Education</a>
+                    <a href="#skills" class="text-gray-300 hover:text-primary-cyan transition duration-300 font-medium link-transition">Skills</a>
+                    <a href="#projects" class="text-gray-300 hover:text-primary-cyan transition duration-300 font-medium link-transition">Projects</a>
+                    <a href="#contact" class="text-gray-300 hover:text-primary-cyan transition duration-300 font-medium link-transition">Contact</a>
                 </nav>
             </div>
         </div>
     </header>
 
     <main class="max-w-4xl mx-auto">
-        <!-- Hero Section (Minimalist & Informative) -->
-        <section id="hero" class="text-center py-20 px-4 sm:px-6 lg:px-8">
-            <h1 class="text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">
-                Muathaf | DevOps & Intelligent Systems Architect
-            </h1>
-            <h2 class="text-2xl font-medium text-primary-slate mb-6">
-                IT Engineer | Specializing in Infrastructure Automation & AI Integration
-            </h2>
-            <p class="text-xl text-gray-700 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
-                My work focuses on bridging the gap between development and operations by mastering CI/CD, containerization, and foundational cloud architecture principles.
-            </p>
-            <!-- Changed CTA color to the new slate accent -->
-            <a href="#projects" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl shadow-lg text-white bg-primary-slate hover:bg-primary-hover transition duration-300 transform hover:scale-[1.02]">
-                View My Core Capabilities
-            </a>
+        <!-- Hero Section (Current Status) -->
+        <section id="hero" class="py-24 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <p class="text-lg font-medium text-primary-cyan mb-3">DevOps & Cloud Automation</p>
+                <h1 class="text-6xl font-extrabold text-white leading-tight mb-6">
+                    Muathaf | Infrastructure Automation Engineer
+                </h1>
+                <p class="text-xl text-gray-400 mb-10">
+                    I architect efficient, reliable, and secure deployment pipelines, leveraging IaC, containerization, and integrating advanced systems like MLOps into production environments.
+                </p>
+                <!-- CTA color changed to Cyan -->
+                <a href="#projects" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl shadow-lg text-gray-900 bg-primary-cyan hover:bg-primary-hover transition duration-300 transform hover:scale-[1.02]">
+                    Explore My Expertise
+                </a>
+            </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-700">
-            <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
-                <!-- User Icon: Changed stroke color to new slate accent -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary-slate mr-3"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
+            <h3 class="text-3xl font-bold text-white mb-8 flex items-center">
+                <!-- Icon color changed to Cyan -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary-cyan mr-3 link-transition"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                 My Professional Focus
             </h3>
-            <div class="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                <p>I'm Muathaf, a dedicated IT professional establishing a robust foundation in DevOps, cloud computing, and modern web development. My primary enthusiasm lies in automating manual processes, improving deployment efficiency, and exploring highly scalable solutions.</p>
-                <p>My current focus is on achieving technical mastery in essential tools and concepts like Docker, CI/CD pipelines, Python, and cloud platforms (AWS, Azure). I recognize that a strong foundation in these technologies is crucial for advancing into specialized fields like MLOps and cloud security.</p>
-                <p>I am eager to contribute my foundational skills to challenging projects and collaborate with experienced teams. I thrive in environments that encourage continuous learning and practical application of technical knowledge.</p>
+            <div class="space-y-6 text-lg text-gray-400 leading-relaxed">
+                <p>I am a practicing DevOps Engineer dedicated to enhancing efficiency, reliability, and security across the software development lifecycle. My role involves leveraging Infrastructure as Code (IaC), containerization, and advanced CI/CD techniques to streamline operations.</p>
+                <p>I am concurrently expanding my skill set into specialized domains, particularly focusing on the practical implementation of Artificial Intelligence and Machine Learning Operations (MLOps). This continuous learning ensures I stay at the forefront of automation and intelligent system deployment.</p>
+                <p>I thrive on delivering solutions that move technology forward. I am always open to connecting with fellow professionals to discuss technical challenges and innovative architectural patterns.</p>
             </div>
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-700">
-            <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
-                <!-- Graduation Cap Icon: Changed stroke color to new slate accent -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary-slate mr-3"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v-2"/><path d="M6 18v-2"/></svg>
+        <section id="education" class="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
+            <h3 class="text-3xl font-bold text-white mb-8 flex items-center">
+                <!-- Icon color changed to Cyan -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary-cyan mr-3 link-transition"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v-2"/><path d="M6 18v-2"/></svg>
                 Education and Certifications
             </h3>
             <div class="space-y-6">
                 <!-- Education Item 1 -->
-                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
-                    <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Master of Information Technology</h4>
-                    <p class="text-primary-slate font-medium mb-2">University of the Cumberlands | Graduated 2024</p>
-                    <p class="text-gray-700 dark:text-gray-300 text-base">
+                <div class="p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700 card-hover-effect">
+                    <h4 class="text-xl font-bold text-white mb-1">Master of Information Technology</h4>
+                    <p class="text-primary-cyan font-medium mb-2 link-transition">University of the Cumberlands | Graduated 2024</p>
+                    <p class="text-gray-400 text-base">
                         Specialization in Cloud Computing & Software Engineering. Comprehensive study in scalable systems, infrastructure automation, and advanced software development methodologies.
                     </p>
                 </div>
                 <!-- Education Item 2 -->
-                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
-                    <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Master of Science in Artificial Intelligence</h4>
-                    <p class="text-primary-slate font-medium mb-2">University of the Cumberlands | Expected 2026</p>
-                    <p class="text-gray-700 dark:text-gray-300 text-base">
+                <div class="p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700 card-hover-effect">
+                    <h4 class="text-xl font-bold text-white mb-1">Master of Science in Artificial Intelligence</h4>
+                    <p class="text-primary-cyan font-medium mb-2 link-transition">University of the Cumberlands | Expected 2026</p>
+                    <p class="text-gray-400 text-base">
                         Current studies focused on AI/ML fundamentals and the practical application of MLOps to deploy and maintain intelligent systems in production environments.
                     </p>
                 </div>
@@ -135,130 +121,130 @@
         </section>
         
         <!-- Skills Section -->
-        <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-700">
-            <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
-                <!-- Code Icon: Changed stroke color to new slate accent -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary-slate mr-3"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+        <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
+            <h3 class="text-3xl font-bold text-white mb-8 flex items-center">
+                <!-- Icon color changed to Cyan -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary-cyan mr-3 link-transition"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
                 Technical Proficiency
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Skill Category 1 -->
-                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
-                    <!-- Changed header color to new slate accent -->
-                    <h4 class="text-xl font-semibold text-primary-slate mb-4 flex items-center">
+                <div class="p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700">
+                    <!-- Header color changed to Cyan -->
+                    <h4 class="text-xl font-semibold text-primary-cyan mb-4 flex items-center link-transition">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M3 7V5c0-1.1.9-2 2-2h2"/><path d="M17 3h2c1.1 0 2 .9 2 2v2"/><path d="M21 17v2c0 1.1-.9 2-2 2h-2"/><path d="M7 21H5c-1.1 0-2-.9-2-2v-2"/></svg>
                         Cloud & Automation
                     </h4>
-                    <!-- Adjusted tag colors for better contrast with new theme -->
+                    <!-- Tag colors adjusted for high contrast -->
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">AWS (Concepts)</span>
-                        <span class="px-3 py-1 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Docker</span>
-                        <span class="px-3 py-1 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">CI/CD Principles</span>
-                        <span class="px-3 py-1 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Terraform (HCL)</span>
+                        <span class="px-3 py-1 text-sm font-medium bg-gray-700 text-gray-300 rounded-full">AWS (Concepts)</span>
+                        <span class="px-3 py-1 text-sm font-medium bg-gray-700 text-gray-300 rounded-full">Docker</span>
+                        <span class="px-3 py-1 text-sm font-medium bg-gray-700 text-gray-300 rounded-full">CI/CD Principles</span>
+                        <span class="px-3 py-1 text-sm font-medium bg-gray-700 text-gray-300 rounded-full">Terraform (HCL)</span>
                     </div>
                 </div>
                 <!-- Skill Category 2 -->
-                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
-                    <!-- Changed header color to new slate accent -->
-                    <h4 class="text-xl font-semibold text-primary-slate mb-4 flex items-center">
+                <div class="p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700">
+                    <!-- Header color changed to Cyan -->
+                    <h4 class="text-xl font-semibold text-primary-cyan mb-4 flex items-center link-transition">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M16.466 7.848c.762.775.748 2.031-.033 2.802-.455.457-.999.704-1.558.704s-1.1-.247-1.558-.704l-5.698-5.698c-.762-.775-.748-2.031.033-2.802.781-.775 2.046-.76 2.809.022l5.998 5.998z"/><path d="M10.148 16.152c-.762-.775-.748-2.031.033-2.802.455-.457.999-.704 1.558-.704s1.1.247 1.558.704l5.698 5.698c.762.775.748 2.031-.033 2.802-.781.775-2.046.76-2.809-.022l-5.998-5.998z"/><path d="M12 2v2M12 20v2M3 12h2M19 12h2"/></svg>
                         Development & Intelligence
                     </h4>
-                    <!-- Adjusted tag colors for better contrast with new theme -->
+                    <!-- Tag colors adjusted for high contrast -->
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">HTML/CSS/JS</span>
-                        <span class="px-3 py-1 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Python</span>
-                        <span class="px-3 py-1 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">React Basics</span>
-                        <span class="px-3 py-1 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Git/GitHub</span>
+                        <span class="px-3 py-1 text-sm font-medium bg-gray-700 text-gray-300 rounded-full">HTML/CSS/JS</span>
+                        <span class="px-3 py-1 text-sm font-medium bg-gray-700 text-gray-300 rounded-full">Python</span>
+                        <span class="px-3 py-1 text-sm font-medium bg-gray-700 text-gray-300 rounded-full">React Basics</span>
+                        <span class="px-3 py-1 text-sm font-medium bg-gray-700 text-gray-300 rounded-full">Git/GitHub</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section (Technical Capabilities) -->
-        <section id="projects" class="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-700">
-            <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
-                <!-- Briefcase Icon: Changed stroke color to new slate accent -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary-slate mr-3"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        <section id="projects" class="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
+            <h3 class="text-3xl font-bold text-white mb-8 flex items-center">
+                <!-- Icon color changed to Cyan -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary-cyan mr-3 link-transition"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                 Technical Capabilities
             </h3>
             <div class="space-y-8">
                 <!-- Project 1: Portfolio Itself -->
-                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 card-hover-effect">
-                    <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Architecting a High-Performance Digital Portfolio</h4>
-                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                <div class="p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700 card-hover-effect">
+                    <h4 class="text-xl font-bold text-white mb-2">Architecting a High-Performance Digital Portfolio</h4>
+                    <p class="text-gray-400 mb-4">
                         Designed and developed a fully responsive and modern portfolio from scratch, demonstrating expertise in structured HTML5, utility-first CSS (Tailwind), and implementing best practices for site speed and SEO.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg">HTML5</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg">Tailwind CSS</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg">Responsive Design</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-gray-700 text-gray-300 rounded-lg">HTML5</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-gray-700 text-gray-300 rounded-lg">Tailwind CSS</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-gray-700 text-gray-300 rounded-lg">Responsive Design</span>
                     </div>
                 </div>
 
                 <!-- Project 2: AI Tool Mockup -->
-                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 card-hover-effect">
-                    <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Conceptualizing Intelligent API Integration</h4>
-                    <p class="text-gray-700 dark:text-gray-300 mb-4">
-                        Explored the flow of integrating a modern Generative AI service to create smart tools. Demonstrated the logic required for API communication, asynchronous data handling, and presenting complex output in a clean, user-friendly interface.
+                <div class="p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700 card-hover-effect">
+                    <h4 class="text-xl font-bold text-white mb-2">Conceptualizing Intelligent API Integration</h4>
+                    <p class="text-gray-400 mb-4">
+                        Explored the flow of integrating a modern Generative AI service to create smart tools. Demonstrated the architectural flow required for API communication, asynchronous data handling, and presenting complex output in a clean, user-friendly interface.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg">API Design</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg">JavaScript</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg">Generative AI (Concepts)</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-gray-700 text-gray-300 rounded-lg">API Design</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-gray-700 text-gray-300 rounded-lg">JavaScript</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-gray-700 text-gray-300 rounded-lg">Generative AI (Concepts)</span>
                     </div>
                 </div>
 
                 <!-- Project 3: DevOps Concept -->
-                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 card-hover-effect">
-                    <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Fundamental Infrastructure Automation Workflow</h4>
-                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                <div class="p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700 card-hover-effect">
+                    <h4 class="text-xl font-bold text-white mb-2">Fundamental Infrastructure Automation Workflow</h4>
+                    <p class="text-gray-400 mb-4">
                         Documented the process for containerizing applications (using Docker) and designing Continuous Integration/Continuous Delivery (CI/CD) pipelines, highlighting key concepts like immutable infrastructure and automated testing strategies.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg">Docker</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg">CI/CD</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg">Cloud Infrastructure</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-gray-700 text-gray-300 rounded-lg">Docker</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-gray-700 text-gray-300 rounded-lg">CI/CD</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-gray-700 text-gray-300 rounded-lg">Cloud Infrastructure</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-700">
-            <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
-                <!-- Mail Icon: Changed stroke color to new slate accent -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary-slate mr-3"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
+            <h3 class="text-3xl font-bold text-white mb-8 flex items-center">
+                <!-- Icon color changed to Cyan -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary-cyan mr-3 link-transition"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 Connect & Collaborate
             </h3>
-            <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
-                I am actively seeking opportunities to apply my technical foundation. Feel free to connect for roles, collaborations, or simply to discuss modern IT infrastructure.
+            <p class="text-lg text-gray-400 mb-8">
+                I am focused on active development and happy to connect with colleagues and teams on challenging technical projects.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Email Link (Text Hidden) -->
-                <a href="mailto:muathaf.it@gmail.com" class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 card-hover-effect text-primary-slate hover:bg-gray-100 dark:hover:bg-gray-700">
+                <!-- Email Link -->
+                <a href="mailto:muathaf.it@gmail.com" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700 card-hover-effect text-primary-cyan hover:bg-gray-800/80">
                     <span class="text-3xl mb-2">📧</span>
-                    <span class="font-semibold text-lg">Send Email</span>
-                    <span class="text-sm text-gray-500 dark:text-gray-400">Click to compose message</span>
+                    <span class="font-semibold text-lg link-transition">Send Email</span>
+                    <span class="text-sm text-gray-500">Click to compose message</span>
                 </a>
                 <!-- LinkedIn Link (Placeholder) -->
-                <a href="https://linkedin.com/in/muathaf" target="_blank" class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 card-hover-effect text-primary-slate hover:bg-gray-100 dark:hover:bg-gray-700">
+                <a href="https://linkedin.com/in/muathaf" target="_blank" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700 card-hover-effect text-primary-cyan hover:bg-gray-800/80">
                     <span class="text-3xl mb-2">💼</span>
-                    <span class="font-semibold text-lg">LinkedIn</span>
-                    <span class="text-sm text-gray-500 dark:text-gray-400">Professional Network</span>
+                    <span class="font-semibold text-lg link-transition">LinkedIn</span>
+                    <span class="text-sm text-gray-500">Professional Network</span>
                 </a>
                 <!-- GitHub Link (Placeholder) -->
-                <a href="https://github.com/muathaf" target="_blank" class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 card-hover-effect text-primary-slate hover:bg-gray-100 dark:hover:bg-gray-700">
+                <a href="https://github.com/muathaf" target="_blank" class="flex flex-col items-center p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700 card-hover-effect text-primary-cyan hover:bg-gray-800/80">
                     <span class="text-3xl mb-2">💻</span>
-                    <span class="font-semibold text-lg">GitHub</span>
-                    <span class="text-sm text-gray-500 dark:text-gray-400">View Source Code</span>
+                    <span class="font-semibold text-lg link-transition">GitHub</span>
+                    <span class="text-sm text-gray-500">View Source Code</span>
                 </a>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="text-center py-8 border-t border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 text-sm">
-            &copy; 2025 Muathaf. Architected with HTML and Tailwind CSS.
+        <footer class="text-center py-8 border-t border-gray-800 text-gray-500 text-sm">
+            &copy; 2025 Muathaf. DevOps Engineer | Architected with HTML and Tailwind CSS.
         </footer>
     </main>
 </body>
