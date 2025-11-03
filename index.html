@@ -22,12 +22,14 @@
         .container {
             max-width: 1200px;
         }
+        /* UPDATED: This creates a gradient underline effect fading from blue to pink */
         .section-title::after {
             content: '';
             display: block;
-            width: 50px;
+            width: 60px; /* Slightly wider */
             height: 3px;
-            background-color: var(--primary-color);
+            /* Gradient from Blue (DevOps) to Pink (AI) */
+            background: linear-gradient(to right, #3b82f6, #ec4899);
             margin-top: 10px;
             border-radius: 9999px;
         }
@@ -48,9 +50,13 @@
     <!-- Navigation Bar -->
     <header id="navbar" class="sticky-header fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 shadow-xl">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <!-- Updated logo to use Muathaf -->
-            <a href="#" class="text-2xl font-extrabold text-white">
-                <span class="text-blue-400">M</span>uathaf
+            <!-- UPDATED Logo to use gradient text with icons -->
+            <a href="#" class="text-2xl font-extrabold text-white flex items-center space-x-2">
+                <i data-lucide="server-cog" class="w-6 h-6 text-blue-400"></i> <!-- Changed from green to blue -->
+                <span class="text-3xl font-extrabold bg-gradient-to-r from-blue-400 to-pink-400 text-transparent bg-clip-text">
+                    Muathaf
+                </span>
+                <i data-lucide="brain-circuit" class="w-6 h-6 text-pink-400"></i>
             </a>
             <nav class="hidden md:flex space-x-6">
                 <a href="#about" class="text-slate-300 hover:text-blue-400 transition duration-150">About</a>
@@ -85,8 +91,12 @@
                 <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 text-white leading-tight">
                     Muathaf
                 </h1>
-                <p class="text-xl sm:text-3xl font-light text-blue-300 mb-6">
-                    DevOps Engineer & MS AI Candidate
+                
+                <!-- Added AI Enthusiast Logo -->
+                <p class="text-xl sm:text-3xl font-light text-blue-300 mb-6 flex items-center justify-center space-x-3">
+                    <span>DevOps Engineer</span>
+                    <i data-lucide="brain-circuit" class="w-7 h-7 text-pink-400"></i>
+                    <span>MS AI Candidate</span>
                 </p>
                 
                 <div class="flex justify-center space-x-4">
@@ -107,31 +117,32 @@
                 
                 <div class="grid md:grid-cols-2 gap-12 items-start">
                     <div>
+                        <!-- Removed bold markdown for more natural flow -->
                         <p class="text-lg mb-4 leading-relaxed text-slate-300">
-                            I am a seasoned technology professional with a strong foundation from my **MS in IT**, specializing in enterprise architecture and robust system design. My current focus is on bridging the gap between infrastructure scaling and data science as I pursue my **Masters in AI**.
+                            I am a seasoned technology professional with a strong foundation from my MS in IT, specializing in enterprise architecture and robust system design. My current focus is on bridging the gap between infrastructure scaling and data science as I pursue my Masters in AI.
                         </p>
                         <p class="text-lg mb-4 leading-relaxed text-slate-300">
-                            My core expertise lies in **DevOps Engineering**, where I architect and automate highly available, scalable, and secure cloud environments (CI/CD, Infrastructure as Code).
+                            My core expertise lies in DevOps Engineering, where I architect and automate highly available, scalable, and secure cloud environments (CI/CD, Infrastructure as Code).
                         </p>
                         <p class="text-lg leading-relaxed text-slate-300">
-                            The AI studies allow me to bring a critical **MLOps perspective** to my engineering work—ensuring that machine learning models are not just built, but deployed, monitored, and maintained efficiently in production. I thrive at the intersection of reliable systems and cutting-edge data science.
+                            The AI studies allow me to bring a critical MLOps perspective to my engineering work—ensuring that machine learning models are not just built, but deployed, monitored, and maintained efficiently in production. I thrive at the intersection of reliable systems and cutting-edge data science.
                         </p>
                     </div>
 
                     <div class="bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-700">
                         <h3 class="text-2xl font-semibold mb-4 text-blue-400">My Value Proposition</h3>
-                        <ul class="space-y-4 text-slate-300">
+                        <ul class="space-y-4 text-slate-300 list-inside">
                             <li class="flex items-start">
                                 <i data-lucide="cloud" class="w-5 h-5 text-blue-400 mr-3 mt-1 flex-shrink-0"></i>
-                                <span>**Scalable Infrastructure:** Expertise in Terraform, Kubernetes, and Cloud platforms (AWS/GCP) for high-performance systems.</span>
+                                <span>Scalable Infrastructure: Expertise in Terraform, Kubernetes, and Cloud platforms (AWS/GCP) for high-performance systems.</span>
                             </li>
                             <li class="flex items-start">
                                 <i data-lucide="bot" class="w-5 h-5 text-blue-400 mr-3 mt-1 flex-shrink-0"></i>
-                                <span>**AI Deployment:** Focusing on MLOps, CI/CD for models, and data pipeline reliability.</span>
+                                <span>AI Deployment: Focusing on MLOps, CI/CD for models, and data pipeline reliability.</span>
                             </li>
                             <li class="flex items-start">
                                 <i data-lucide="graduation-cap" class="w-5 h-5 text-blue-400 mr-3 mt-1 flex-shrink-0"></i>
-                                <span>**Dual Master's Insight:** Bringing advanced knowledge from both IT management and pure AI research.</span>
+                                <span>Dual Master's Insight: Bringing advanced knowledge from both IT management and pure AI research.</span>
                             </li>
                         </ul>
                     </div>
@@ -365,3 +376,4 @@
 
 </body>
 </html>
+
