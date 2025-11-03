@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muathaf's Zone</title>
+    <meta name="description" content="Muathaf's Zone – DevOps Engineer & AI Enthusiast portfolio showcasing skills in cloud computing, AI integration, and modern web development.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -348,6 +349,8 @@
   color: var(--text-secondary);
   line-height: 1.6;
 }
+        <div class="section-divider">Other Skills & Interests</div>
+
 /* Other Skills & Interests */
 .other-skills-grid {
   display: grid;
@@ -389,6 +392,29 @@
   margin-top: 8px;
   border-radius: 2px;
 }
+/* Section Divider */
+.section-divider {
+  text-align: center;
+  position: relative;
+  margin: 60px 0;
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-size: 0.9em;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 35%;
+  height: 1px;
+  background: var(--border);
+}
+
+.section-divider::before { left: 0; }
+.section-divider::after { right: 0; }
 
 
         /* Responsive */
@@ -450,7 +476,8 @@
             <!-- Hero Section -->
             <div class="hero">
                 <h1>DevOps Engineer & AI Enthusiast</h1>
-                <p>I build beautiful, functional websites and applications with modern technologies. I help companies to implement AI in their Infrastructure</p>
+                <a href="#" class="logo" aria-label="Go to homepage">Muathaf's Zone</a>
+                <p>I build beautiful, functional websites and applications with modern technologies. I help companies to implement AI in their infrastructure</p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">View my work</a>
                     <a href="#contact" class="btn btn-secondary">Get in touch</a>
