@@ -3,460 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muathaf's Zone</title>
-    <meta name="description" content="Muathaf's Zone – DevOps Engineer & AI Enthusiast portfolio showcasing skills in cloud computing, AI integration, and modern web development.">
+    <title>Muathaf's Zone | DevOps & AI Portfolio</title>
+    <meta name="description" content="Muathaf's Zone – DevOps Engineer & AI Enthusiast portfolio showcasing cloud computing, AI integration, and modern web development skills.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com/">
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:title" content="Muathaf's Zone | DevOps & AI Portfolio">
+    <meta property="og:description" content="DevOps Engineer & AI Enthusiast showcasing cloud, AI, and web development projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:image" content="https://yourwebsite.com/social-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Muathaf's Zone | DevOps & AI Portfolio">
+    <meta name="twitter:description" content="DevOps Engineer & AI Enthusiast showcasing cloud, AI, and web development projects.">
+    <meta name="twitter:image" content="https://yourwebsite.com/social-preview.png">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* -------------------- Reset & Variables -------------------- */
+        *{margin:0;padding:0;box-sizing:border-box;}
+        :root{
+            --text-primary:#1a1a1a;
+            --text-secondary:#666;
+            --text-tertiary:#999;
+            --background:#ffffff;
+            --accent:#2563eb;
+            --accent-hover:#1d4ed8;
+            --border:#e5e5e5;
+            --card-bg:#fafafa;
         }
+        html{scroll-behavior:smooth;}
+        body{font-family:'Inter',sans-serif;line-height:1.6;color:var(--text-primary);background:var(--background);font-weight:400;}
+        .container{max-width:800px;margin:0 auto;padding:0 20px;}
 
-        :root {
-            --text-primary: #1a1a1a;
-            --text-secondary: #666;
-            --text-tertiary: #999;
-            --background: #ffffff;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --border: #e5e5e5;
-            --card-bg: #fafafa;
-        }
+        /* -------------------- Header & Navigation -------------------- */
+        header{padding:60px 0 40px 0;border-bottom:1px solid var(--border);}
+        .nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:60px;position:sticky;top:0;background:var(--background);z-index:1000;padding:15px 0;box-shadow:0 2px 8px rgba(0,0,0,0.05);transition:background 0.3s,padding 0.3s;}
+        .nav.shrink{padding:8px 0;}
+        .logo{font-size:1.2em;font-weight:600;color:var(--text-primary);text-decoration:none;}
+        .nav-links{display:flex;gap:30px;}
+        .nav-links a{color:var(--text-secondary);text-decoration:none;font-weight:500;transition:color 0.2s;}
+        .nav-links a:hover{color:var(--text-primary);}
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--background);
-            font-weight: 400;
-        }
+        /* -------------------- Hero -------------------- */
+        .hero{text-align:center;padding:40px 0 80px 0;}
+        .hero h1{font-size:3.5em;font-weight:700;line-height:1.1;margin-bottom:20px;background:linear-gradient(135deg,var(--text-primary) 0%,var(--text-secondary) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+        .hero h2{font-size:2em;font-weight:500;color:var(--text-secondary);margin-bottom:20px;}
+        .hero p{font-size:1.3em;color:var(--text-secondary);max-width:600px;margin:0 auto 40px auto;font-weight:400;}
+        .cta-buttons{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;}
+        .btn{padding:12px 30px;border-radius:8px;text-decoration:none;font-weight:500;transition:all 0.2s;border:1px solid var(--border);}
+        .btn-primary{background:var(--accent);color:white;border-color:var(--accent);}
+        .btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px);}
+        .btn-secondary{background:transparent;color:var(--text-primary);}
+        .btn-secondary:hover{background:var(--card-bg);transform:translateY(-1px);}
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        /* -------------------- Sections -------------------- */
+        section{padding:80px 0;border-bottom:1px solid var(--border);}
+        section:last-child{border-bottom:none;}
+        .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;}
+        .section-title{font-size:1.8em;font-weight:600;color:var(--text-primary);position:relative;}
+        .section-title::after{content:"";display:block;width:60px;height:3px;background:var(--accent);margin-top:8px;border-radius:2px;}
+        .section-link{color:var(--accent);text-decoration:none;font-weight:500;}
+        .section-link:hover{text-decoration:underline;}
 
-        /* Header & Navigation */
-        header {
-            padding: 60px 0 40px 0;
-            border-bottom: 1px solid var(--border);
-        }
+        /* -------------------- About -------------------- */
+        .about-content{font-size:1.1em;color:var(--text-secondary);line-height:1.7;}
+        .about-content p{margin-bottom:20px;}
 
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 60px;
-        }
+        /* -------------------- Skills -------------------- */
+        .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+        .skill-category h3{font-size:1.1em;font-weight:600;margin-bottom:15px;color:var(--text-primary);}
+        .skill-list{display:flex;flex-wrap:wrap;gap:8px;}
+        .skill-tag{background:var(--card-bg);padding:6px 12px;border-radius:6px;font-size:0.9em;color:var(--text-secondary);border:1px solid var(--border);}
 
-        .logo {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
+        /* -------------------- Projects -------------------- */
+        .projects-grid{display:grid;gap:30px;}
+        .project-card{background:var(--card-bg);padding:30px;border-radius:12px;border:1px solid var(--border);transition:all 0.2s;}
+        .project-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+        .project-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:15px;}
+        .project-title{font-size:1.3em;font-weight:600;color:var(--text-primary);margin-bottom:5px;}
+        .project-description{color:var(--text-secondary);line-height:1.6;margin-bottom:20px;}
+        .project-tech{display:flex;flex-wrap:wrap;gap:8px;}
+        .tech-tag{background:white;padding:4px 10px;border-radius:6px;font-size:0.85em;color:var(--text-tertiary);border:1px solid var(--border);}
 
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
+        /* -------------------- Contact -------------------- */
+        .contact-links{display:flex;flex-direction:column;gap:15px;}
+        .contact-link{display:flex;align-items:center;gap:15px;padding:20px;background:var(--card-bg);border-radius:12px;text-decoration:none;color:var(--text-primary);border:1px solid var(--border);transition:all 0.2s;}
+        .contact-link:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+        .contact-icon{font-size:1.5em;}
+        .contact-text h3{font-weight:600;margin-bottom:5px;}
+        .contact-text p{color:var(--text-secondary);font-size:0.95em;}
 
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
+        /* -------------------- Footer -------------------- */
+        footer{padding:40px 0;text-align:center;color:var(--text-tertiary);font-size:0.9em;}
 
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
+        /* -------------------- Education -------------------- */
+        .education-list{display:flex;flex-direction:column;gap:30px;}
+        .education-item{background:var(--card-bg);padding:25px;border-radius:10px;border:1px solid var(--border);transition:all 0.2s;}
+        .education-item:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+        .education-degree{font-size:1.2em;font-weight:600;color:var(--text-primary);margin-bottom:5px;}
+        .education-school{font-weight:500;color:var(--text-secondary);margin-bottom:10px;}
+        .education-description{font-size:0.95em;color:var(--text-secondary);line-height:1.6;}
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 40px 0 80px 0;
-        }
+        /* -------------------- Other Skills & Interests -------------------- */
+        .other-skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+        .interest-card{background:var(--card-bg);padding:25px;border-radius:12px;border:1px solid var(--border);transition:all 0.2s;}
+        .interest-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+        .interest-card h3{font-size:1.1em;font-weight:600;margin-bottom:10px;color:var(--text-primary);}
+        .interest-card p{color:var(--text-secondary);font-size:0.95em;line-height:1.6;}
 
-        .hero h1 {
-            font-size: 3.5em;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+        /* -------------------- Section Divider -------------------- */
+        .section-divider{text-align:center;position:relative;margin:60px 0;color:var(--text-secondary);font-weight:500;letter-spacing:0.05em;font-size:0.9em;}
+        .section-divider::before,.section-divider::after{content:"";position:absolute;top:50%;width:35%;height:1px;background:var(--border);}
+        .section-divider::before{left:0;}
+        .section-divider::after{right:0;}
 
-        .hero p {
-            font-size: 1.3em;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-            font-weight: 400;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s;
-            border: 1px solid var(--border);
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-hover);
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-        }
-
-        .btn-secondary:hover {
-            background: var(--card-bg);
-            transform: translateY(-1px);
-        }
-
-        /* Sections */
-        section {
-            padding: 80px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        section:last-child {
-            border-bottom: none;
-        }
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            font-size: 1.8em;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .section-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .section-link:hover {
-            text-decoration: underline;
-        }
-
-        /* About */
-        .about-content {
-            font-size: 1.1em;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .about-content p {
-            margin-bottom: 20px;
-        }
-
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-category h3 {
-            font-size: 1.1em;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--text-primary);
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill-tag {
-            background: var(--card-bg);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.9em;
-            color: var(--text-secondary);
-            border: 1px solid var(--border);
-        }
-
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            gap: 30px;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            transition: all 0.2s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .project-title {
-            font-size: 1.3em;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 5px;
-        }
-
-        .project-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tech-tag {
-            background: white;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.85em;
-            color: var(--text-tertiary);
-            border: 1px solid var(--border);
-        }
-
-        /* Contact */
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px;
-            background: var(--card-bg);
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-            transition: all 0.2s;
-        }
-
-        .contact-link:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .contact-icon {
-            font-size: 1.5em;
-        }
-
-        .contact-text h3 {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .contact-text p {
-            color: var(--text-secondary);
-            font-size: 0.95em;
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            color: var(--text-tertiary);
-            font-size: 0.9em;
-        }
-/* Education */
-.education-list {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.education-item {
-  background: var(--card-bg);
-  padding: 25px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  transition: all 0.2s;
-}
-
-.education-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.education-degree {
-  font-size: 1.2em;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 5px;
-}
-
-.education-school {
-  font-weight: 500;
-  color: var(--text-secondary);
-  margin-bottom: 10px;
-}
-
-.education-description {
-  font-size: 0.95em;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-        
-
-/* Other Skills & Interests */
-.other-skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.interest-card {
-  background: var(--card-bg);
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  transition: all 0.2s;
-}
-
-.interest-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.interest-card h3 {
-  font-size: 1.1em;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--text-primary);
-}
-
-.interest-card p {
-  color: var(--text-secondary);
-  font-size: 0.95em;
-  line-height: 1.6;
-}
-.section-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: var(--accent);
-  margin-top: 8px;
-  border-radius: 2px;
-}
-/* Section Divider */
-.section-divider {
-  text-align: center;
-  position: relative;
-  margin: 60px 0;
-  color: var(--text-secondary);
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  font-size: 0.9em;
-}
-
-.section-divider::before,
-.section-divider::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 35%;
-  height: 1px;
-  background: var(--border);
-}
-
-.section-divider::before { left: 0; }
-.section-divider::after { right: 0; }
-
-
-        /*  */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5em;
-            }
-            
-            .hero p {
-                font-size: 1.1em;
-            }
-            
-            .nav-links {
-                gap: 20px;
-            }
-            
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .project-header {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2em;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 200px;
-            }
-        }
+        /* -------------------- Responsive -------------------- */
+        @media(max-width:768px){.hero h1{font-size:2.5em}.hero h2{font-size:1.5em}.hero p{font-size:1.1em}.nav-links{gap:20px}.section-header{flex-direction:column;align-items:flex-start;gap:10px}.project-header{flex-direction:column;gap:10px}}
+        @media(max-width:480px){.hero h1{font-size:2em}.hero h2{font-size:1.2em}.cta-buttons{flex-direction:column;align-items:center}.btn{width:200px}}
     </style>
 </head>
 <body>
@@ -464,7 +133,7 @@
         <!-- Header & Navigation -->
         <header>
             <nav class="nav">
-                <a href="#" class="logo">Muathaf's World</a>
+                <a href="#" class="logo" aria-label="Go to homepage">Muathaf's World</a>
                 <div class="nav-links">
                     <a href="#about">About</a>
                     <a href="#skills">Skills</a>
@@ -472,125 +141,83 @@
                     <a href="#contact">Contact</a>
                 </div>
             </nav>
-            
+
             <!-- Hero Section -->
             <div class="hero">
-    <h1>Welcome to Muathaf’s Zone</h1>
-    <h2>DevOps Engineer & AI Enthusiast</h2>
-    <p>I build beautiful, functional websites and applications with modern technologies. I help companies implement AI in their infrastructure.</p>
-    <div class="cta-buttons">
-        <a href="#projects" class="btn btn-primary">View my work</a>
-        <a href="#contact" class="btn btn-secondary">Get in touch</a>
-    </div>
-</div>
-
+                <h1>Welcome to Muathaf’s Zone</h1>
+                <h2>DevOps Engineer & AI Enthusiast</h2>
+                <p>I build beautiful, functional websites and applications with modern technologies. I help companies implement AI in their infrastructure.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">View my work</a>
+                    <a href="#contact" class="btn btn-secondary">Get in touch</a>
+                </div>
+            </div>
         </header>
 
         <!-- About Section -->
         <section id="about">
-            <div class="section-header">
-                <h2 class="section-title">About</h2>
-            </div>
+            <div class="section-header"><h2 class="section-title">About</h2></div>
             <div class="about-content">
                 <p>Hello! I'm Muathaf, a passionate developer and cloud enthusiast who loves creating beautiful and functional digital experiences. I enjoy turning complex problems into simple, elegant solutions.</p>
                 <p>With expertise in web development, cloud technologies, and modern frameworks, I build applications that are both performant and user-friendly. I'm constantly learning and exploring new technologies to stay at the forefront of development.</p>
                 <p>When I'm not coding, you can find me exploring cloud architectures, contributing to open source projects, or sharing knowledge with the developer community.</p>
             </div>
         </section>
-<!-- Education Section -->
-<section id="education">
-  <div class="section-header">
-    <h2 class="section-title">Education</h2>
-  </div>
-  <div class="education-list">
-    <div class="education-item">
-      <h3 class="education-degree">Master of Science in Artificial Intelligence</h3>
-      <p class="education-school">[Your University Name], 2025</p>
-      <p class="education-description">Focused on AI, Machine Learning, and MLOps with projects integrating AI into DevOps workflows.</p>
-    </div>
 
-    <div class="education-item">
-      <h3 class="education-degree">Master of Information Technology</h3>
-      <p class="education-school">[Your University Name], 2023</p>
-      <p class="education-description">Specialized in Cloud Computing, Software Engineering, and Infrastructure Automation.</p>
-    </div>
-  </div>
-</section>
+        <!-- Education Section -->
+        <section id="education">
+            <div class="section-header"><h2 class="section-title">Education</h2></div>
+            <div class="education-list">
+                <div class="education-item">
+                    <h3 class="education-degree">Master of Science in Artificial Intelligence</h3>
+                    <p class="education-school">[Your University Name], 2025</p>
+                    <p class="education-description">Focused on AI, Machine Learning, and MLOps with projects integrating AI into DevOps workflows.</p>
+                </div>
+                <div class="education-item">
+                    <h3 class="education-degree">Master of Information Technology</h3>
+                    <p class="education-school">[Your University Name], 2023</p>
+                    <p class="education-description">Specialized in Cloud Computing, Software Engineering, and Infrastructure Automation.</p>
+                </div>
+            </div>
+        </section>
 
         <!-- Skills Section -->
         <section id="skills">
-            <div class="section-header">
-                <h2 class="section-title">Skills</h2>
-            </div>
+            <div class="section-header"><h2 class="section-title">Skills</h2></div>
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Cloud & DevOps</h3>
+                <div class="skill-category"><h3>Cloud & DevOps</h3>
                     <div class="skill-list">
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">Google Cloud</span>
-                        <span class="skill-tag">Azure</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">AWS</span><span class="skill-tag">Google Cloud</span><span class="skill-tag">Azure</span><span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">CI/CD</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Frontend</h3>
+                <div class="skill-category"><h3>Frontend</h3>
                     <div class="skill-list">
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">React</span><span class="skill-tag">TypeScript</span><span class="skill-tag">HTML/CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Tailwind CSS</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
+                <div class="skill-category"><h3>Backend</h3>
                     <div class="skill-list">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Express</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Node.js</span><span class="skill-tag">Python</span><span class="skill-tag">Express</span><span class="skill-tag">MongoDB</span><span class="skill-tag">PostgreSQL</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Tools</h3>
+                <div class="skill-category"><h3>Tools</h3>
                     <div class="skill-list">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">VS Code</span><span class="skill-tag">Figma</span><span class="skill-tag">Postman</span>
                     </div>
                 </div>
             </div>
         </section>
-        <!--  Section Divider -->
-        <div class="section-divider">Other Skills & Interests</div>
 
         <!-- Other Skills & Interests Section -->
-<section id="other-skills">
-  <div class="section-header">
-    <h2 class="section-title">Other Skills & Interests</h2>
-  </div>
-  <div class="other-skills-grid">
-    <div class="interest-card">
-      <h3>Music & Singing</h3>
-      <p>I have a passion for singing and music, which helps me express creativity and stay balanced in life.</p>
-    </div>
-
-    <div class="interest-card">
-      <h3>Teamwork & Leadership</h3>
-      <p>Through group projects and hackathons, I’ve honed collaboration and leadership skills in diverse teams.</p>
-    </div>
-
-    <div class="interest-card">
-      <h3>Continuous Learning</h3>
-      <p>I love exploring new tools and technologies to stay ahead in the fast-evolving tech landscape.</p>
-    </div>
-  </div>
-</section>
+        <div class="section-divider">Other Skills & Interests</div>
+        <section id="other-skills">
+            <div class="section-header"><h2 class="section-title">Other Skills & Interests</h2></div>
+            <div class="other-skills-grid">
+                <div class="interest-card"><h3>Music & Singing</h3><p>I have a passion for singing and music, which helps me express creativity and stay balanced in life.</p></div>
+                <div class="interest-card"><h3>Teamwork & Leadership</h3><p>Through group projects and hackathons, I’ve honed collaboration and leadership skills in diverse teams.</p></div>
+                <div class="interest-card"><h3>Continuous Learning</h3><p>I love exploring new tools and technologies to stay ahead in the fast-evolving tech landscape.</p></div>
+            </div>
+        </section>
 
         <!-- Projects Section -->
         <section id="projects">
@@ -600,81 +227,30 @@
             </div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-header">
-                        <div>
-                            <h3 class="project-title">Portfolio Website</h3>
-                        </div>
-                    </div>
-                    <p class="project-description">A  personal portfolio website built with modern HTML, CSS, and JavaScript. Features a clean design and smooth animations.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">GitHub Pages</span>
-                    </div>
+                    <div class="project-header"><h3 class="project-title">Portfolio Website</h3></div>
+                    <p class="project-description">A personal portfolio website built with modern HTML, CSS, and JavaScript. Features a clean design and smooth animations.</p>
+                    <div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">GitHub Pages</span></div>
                 </div>
-                
                 <div class="project-card">
-                    <div class="project-header">
-                        <div>
-                            <h3 class="project-title">Cloud Infrastructure</h3>
-                        </div>
-                    </div>
+                    <div class="project-header"><h3 class="project-title">Cloud Infrastructure</h3></div>
                     <p class="project-description">Designed and deployed scalable cloud infrastructure using AWS services including EC2, S3, and CloudFront for high-performance applications.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">AWS</span>
-                        <span class="tech-tag">Terraform</span>
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">CI/CD</span>
-                    </div>
+                    <div class="project-tech"><span class="tech-tag">AWS</span><span class="tech-tag">Terraform</span><span class="tech-tag">Docker</span><span class="tech-tag">CI/CD</span></div>
                 </div>
-                
                 <div class="project-card">
-                    <div class="project-header">
-                        <div>
-                            <h3 class="project-title">Task Management App</h3>
-                        </div>
-                    </div>
+                    <div class="project-header"><h3 class="project-title">Task Management App</h3></div>
                     <p class="project-description">A full-stack task management application with real-time updates, user authentication, and collaborative features.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">WebSocket</span>
-                    </div>
+                    <div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span><span class="tech-tag">WebSocket</span></div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact">
-            <div class="section-header">
-                <h2 class="section-title">Contact</h2>
-            </div>
+            <div class="section-header"><h2 class="section-title">Contact</h2></div>
             <div class="contact-links">
-                <a href="mailto:muathaf.it@gmail.com" class="contact-link">
-                    <div class="contact-icon">📧</div>
-                    <div class="contact-text">
-                        <h3>Email</h3>
-                        <p>Get in touch for collaborations</p>
-                    </div>
-                </a>
-                
-                <a href="https://linkedin.com/in/muathaf" class="contact-link">
-                    <div class="contact-icon">💼</div>
-                    <div class="contact-text">
-                        <h3>LinkedIn</h3>
-                        <p>Connect professionally</p>
-                    </div>
-                </a>
-                
-                <a href="https://github.com/muathaf" class="contact-link">
-                    <div class="contact-icon">💻</div>
-                    <div class="contact-text">
-                        <h3>GitHub</h3>
-                        <p>Check out my projects</p>
-                    </div>
-                </a>
+                <a href="mailto:muathaf.it@gmail.com" class="contact-link"><div class="contact-icon">📧</div><div class="contact-text"><h3>Email</h3><p>Get in touch for collaborations</p></div></a>
+                <a href="https://linkedin.com/in/muathaf" class="contact-link"><div class="contact-icon">💼</div><div class="contact-text"><h3>LinkedIn</h3><p>Connect professionally</p></div></a>
+                <a href="https://github.com/muathaf" class="contact-link"><div class="contact-icon">💻</div><div class="contact-text"><h3>GitHub</h3><p>Check out my projects</p></div></a>
             </div>
         </section>
 
@@ -684,5 +260,13 @@
             <p>Built with pure HTML & CSS</p>
         </footer>
     </div>
+
+    <!-- Script for Sticky Nav -->
+    <script>
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('shrink', window.scrollY > 50);
+        });
+    </script>
 </body>
 </html>
