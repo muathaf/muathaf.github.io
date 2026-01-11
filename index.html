@@ -3,333 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muathaf's Portfolio</title>
+    <title>Muathaf | MLOps & Cloud Architect</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Custom styling for a smooth, dark-themed portfolio */
-        :root {
-            --primary-color: #3b82f6; /* Tailwind blue-500 */
-        }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f172a; /* Slate-900 */
-            color: #e2e8f0; /* Slate-200 */
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #020617; /* Deepest Slate */
+            color: #f8fafc;
         }
-        .container {
-            max-width: 1200px;
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        /* UPDATED: This creates a gradient underline effect fading from blue to pink */
-        .section-title::after {
+        .text-gradient {
+            background: linear-gradient(135deg, #60a5fa 0%, #d946ef 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
             content: '';
-            display: block;
-            width: 60px; /* Slightly wider */
-            height: 3px;
-            /* Gradient from Blue (DevOps) to Pink (AI) */
-            background: linear-gradient(to right, #3b82f6, #ec4899);
-            margin-top: 10px;
-            border-radius: 9999px;
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: #60a5fa;
+            transition: width 0.3s ease;
         }
-        /* Sticky header background opacity */
-        .sticky-header {
-            backdrop-filter: blur(10px);
-            background-color: rgba(15, 23, 42, 0.95);
+        .nav-link:hover::after {
+            width: 100%;
         }
-        /* Style for the skill chip hover effect */
-        .skill-chip:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        .section-heading {
+            letter-spacing: -0.02em;
         }
     </style>
 </head>
 <body onload="lucide.createIcons()">
 
-    <header id="navbar" class="sticky-header fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 shadow-xl">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-extrabold text-white flex items-center space-x-2">
-                <i data-lucide="server-cog" class="w-6 h-6 text-blue-400"></i> <span class="text-3xl font-extrabold bg-gradient-to-r from-blue-400 to-pink-400 text-transparent bg-clip-text">
-                    Muathaf
-                </span>
-                <i data-lucide="brain-circuit" class="w-6 h-6 text-pink-400"></i>
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-slate-950/80 backdrop-blur-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2 group">
+                <span class="text-2xl font-bold tracking-tighter text-gradient italic">M.</span>
+                <span class="text-lg font-semibold tracking-tight group-hover:text-blue-400 transition">MUATHAF</span>
             </a>
-            <nav class="hidden md:flex space-x-6">
-                <a href="#about" class="text-slate-300 hover:text-blue-400 transition duration-150">About</a>
-                <a href="#skills" class="text-slate-300 hover:text-blue-400 transition duration-150">Skills</a>
-                <a href="#projects" class="text-slate-300 hover:text-blue-400 transition duration-150">Projects</a>
-                <a href="#education" class="text-slate-300 hover:text-blue-400 transition duration-150">Education</a>
-                <a href="#contact" class="text-slate-300 hover:text-blue-400 transition duration-150">Contact</a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-slate-400">
+                <a href="#about" class="nav-link hover:text-white">ABOUT</a>
+                <a href="#skills" class="nav-link hover:text-white">STK</a>
+                <a href="#projects" class="nav-link hover:text-white">WORK</a>
+                <a href="#education" class="nav-link hover:text-white">ACADEMIA</a>
+                <a href="#contact" class="px-4 py-2 bg-white text-black rounded-full hover:bg-blue-400 transition duration-300">LET'S TALK</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-slate-800 shadow-lg p-4 space-y-3">
-            <a href="#about" class="block text-slate-200 hover:text-blue-400 transition duration-150 p-2 rounded-lg">About</a>
-            <a href="#skills" class="block text-slate-200 hover:text-blue-400 transition duration-150 p-2 rounded-lg">Skills</a>
-            <a href="#projects" class="block text-slate-200 hover:text-blue-400 transition duration-150 p-2 rounded-lg">Projects</a>
-            <a href="#education" class="block text-slate-200 hover:text-blue-400 transition duration-150 p-2 rounded-lg">Education</a>
-            <a href="#contact" class="block text-slate-200 hover:text-blue-400 transition duration-150 p-2 rounded-lg">Contact</a>
+            <button id="mobile-menu-button" class="md:hidden text-white"><i data-lucide="menu"></i></button>
         </div>
     </header>
 
-    <main class="pt-20">
-        
-        <section id="hero" class="py-20 md:py-32 text-center bg-slate-900 border-b border-slate-800">
-            <div class="container mx-auto px-6">
-                <img src="IMG_9769.jpg" alt="Muathaf's Professional Profile Photo"
-                     class="w-36 h-36 rounded-full mx-auto mb-6 object-cover border-4 border-blue-400 shadow-2xl">
-                
-                <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 text-white leading-tight">
-                    Muathaf
+    <main>
+        <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <div class="inline-block p-1 rounded-full bg-gradient-to-tr from-blue-500 to-pink-500 mb-8">
+                    <img src="IMG_9769.jpg" alt="Muathaf" class="w-32 h-32 rounded-full object-cover border-4 border-slate-950">
+                </div>
+                <h2 class="text-blue-400 font-mono tracking-widest text-sm mb-4 uppercase">Architecting Intelligent Systems</h2>
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight section-heading">
+                    MLOps & <span class="text-gradient">Cloud Systems</span> Engineer
                 </h1>
-                
-                <p class="text-xl sm:text-3xl font-light text-blue-300 mb-6 flex items-center justify-center space-x-3">
-                    <span>MLOps Engineer</span>
+                <p class="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl font-light leading-relaxed mb-10">
+                    Bridging the gap between scalable infrastructure and production-grade AI. Specialized in automating the lifecycle of machine learning models.
                 </p>
-                
-                <div class="flex justify-center space-x-4">
-                    <a href="#projects" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105">
-                        View Projects
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#projects" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-2xl shadow-blue-500/20 transition transform hover:-translate-y-1">
+                        Explore Portfolio
                     </a>
-                    <a href="#contact" class="px-6 py-3 bg-slate-700 text-slate-200 font-semibold rounded-lg shadow-lg hover:bg-slate-600 transition duration-300 transform hover:scale-105">
+                    <a href="#contact" class="px-8 py-4 glass-card text-white font-bold rounded-xl hover:bg-white/10 transition transform hover:-translate-y-1">
                         Get In Touch
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="py-20 md:py-28">
+        <section id="about" class="py-24 bg-slate-950/50">
             <div class="container mx-auto px-6">
-                <h2 class="section-title text-3xl font-bold mb-10 text-white">About Me</h2>
-                
-                <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div>
-                        <p class="text-lg mb-4 leading-relaxed text-slate-300">
-                            I am a seasoned technology professional with a strong foundation from my MS in IT, specializing in enterprise architecture and robust system design. My current focus is on bridging the gap between infrastructure scaling and data science as I pursue my Masters in AI.
-                        </p>
-                        <p class="text-lg mb-4 leading-relaxed text-slate-300">
-                            My core expertise lies in DevOps Engineering, where I architect and automate highly available, scalable, and secure cloud environments (CI/CD, Infrastructure as Code).
-                        </p>
-                        <p class="text-lg leading-relaxed text-slate-300">
-                            The AI studies allow me to bring a critical MLOps perspective to my engineering, ensuring that machine learning models are not just built, but deployed, monitored, and maintained efficiently in production. I thrive at the intersection of reliable systems and cutting-edge data science.
-                        </p>
+                        <h3 class="text-sm font-bold text-blue-500 tracking-[0.2em] uppercase mb-4">Background</h3>
+                        <h2 class="text-4xl font-bold mb-6 section-heading">Expertise at the intersection of IT and AI.</h2>
+                        <div class="space-y-6 text-slate-400 leading-relaxed">
+                            <p>With an <span class="text-white font-medium">MS in IT</span> and an ongoing <span class="text-white font-medium">MS in AI</span>, I bring a unique dual-perspective to technical challenges. I don't just build models; I build the pipelines that make them reliable.</p>
+                            <p>My focus is on <span class="text-blue-400">Enterprise Architecture</span>—ensuring that AI solutions are not just innovative, but scalable, secure, and production-ready from day one.</p>
+                        </div>
                     </div>
-
-                    <div class="bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-700">
-                        <h3 class="text-2xl font-semibold mb-4 text-blue-400">My Value Proposition</h3>
-                        <ul class="space-y-4 text-slate-300 list-inside">
-                            <li class="flex items-start">
-                                <i data-lucide="cloud" class="w-5 h-5 text-blue-400 mr-3 mt-1 flex-shrink-0"></i>
-                                <span>Scalable Infrastructure: Expertise in Terraform, Kubernetes, and Cloud platforms (AWS/GCP) for high-performance systems.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-lucide="bot" class="w-5 h-5 text-blue-400 mr-3 mt-1 flex-shrink-0"></i>
-                                <span>AI Deployment: Focusing on MLOps, CI/CD for models, and data pipeline reliability.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-lucide="graduation-cap" class="w-5 h-5 text-blue-400 mr-3 mt-1 flex-shrink-0"></i>
-                                <span>Dual Master's Insight: Bringing advanced knowledge from both IT management and pure AI research.</span>
-                            </li>
-                        </ul>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="glass-card p-8 rounded-3xl">
+                            <i data-lucide="layers" class="text-blue-400 mb-4"></i>
+                            <h4 class="text-xl font-bold mb-2">Scalability</h4>
+                            <p class="text-sm text-slate-400">Kubernetes & Terraform for high-availability cloud environments.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-3xl">
+                            <i data-lucide="cpu" class="text-pink-400 mb-4"></i>
+                            <h4 class="text-xl font-bold mb-2">Reliability</h4>
+                            <p class="text-sm text-slate-400">Automated CI/CD pipelines for model training and deployment.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="py-20 md:py-28 bg-slate-900 border-t border-b border-slate-800">
+        <section id="skills" class="py-24 border-y border-white/5">
             <div class="container mx-auto px-6">
-                <h2 class="section-title text-3xl font-bold mb-10 text-white">Technical Toolkit</h2>
-                
-                <div class="space-y-10">
-
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-5 text-blue-400 flex items-center">
-                            <i data-lucide="plug-zap" class="w-6 h-6 mr-3"></i>
-                            DevOps & Cloud Engineering
-                        </h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-chip bg-slate-800 text-green-400 py-2 px-4 rounded-full text-sm transition duration-300">AWS / GCP / Azure</span>
-                            <span class="skill-chip bg-slate-800 text-green-400 py-2 px-4 rounded-full text-sm transition duration-300">Kubernetes (EKS/GKE)</span>
-                            <span class="skill-chip bg-slate-800 text-green-400 py-2 px-4 rounded-full text-sm transition duration-300">Docker</span>
-                            <span class="skill-chip bg-slate-800 text-green-400 py-2 px-4 rounded-full text-sm transition duration-300">Terraform (IaC)</span>
-                            <span class="skill-chip bg-slate-800 text-green-400 py-2 px-4 rounded-full text-sm transition duration-300">Ansible</span>
-                            <span class="skill-chip bg-slate-800 text-green-400 py-2 px-4 rounded-full text-sm transition duration-300">Jenkins / GitLab CI / GitHub Actions</span>
-                            <span class="skill-chip bg-slate-800 text-green-400 py-2 px-4 rounded-full text-sm transition duration-300">Monitoring (Prometheus/Grafana)</span>
+                <h2 class="text-4xl font-bold mb-16 text-center section-heading">Technical <span class="text-gradient">Arsenal</span></h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-3xl bg-slate-900/50 border border-white/5">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6">
+                            <i data-lucide="cloud" class="text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 italic">Cloud & DevOps</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">AWS/GCP</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Kubernetes</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Terraform</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Docker</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Jenkins</span>
                         </div>
                     </div>
-
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-5 text-blue-400 flex items-center">
-                            <i data-lucide="brain-circuit" class="w-6 h-6 mr-3"></i>
-                            AI, ML & MLOps
-                        </h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-chip bg-slate-800 text-pink-400 py-2 px-4 rounded-full text-sm transition duration-300">Python (TensorFlow, PyTorch)</span>
-                            <span class="skill-chip bg-slate-800 text-pink-400 py-2 px-4 rounded-full text-sm transition duration-300">MLOps (Kubeflow, MLflow)</span>
-                            <span class="skill-chip bg-slate-800 text-pink-400 py-2 px-4 rounded-full text-sm transition duration-300">Data Engineering (Spark, ETL)</span>
-                            <span class="skill-chip bg-slate-800 text-pink-400 py-2 px-4 rounded-full text-sm transition duration-300">Natural Language Processing (NLP)</span>
-                            <span class="skill-chip bg-slate-800 text-pink-400 py-2 px-4 rounded-full text-sm transition duration-300">LLM Deployment</span>
+                    <div class="p-8 rounded-3xl bg-slate-900/50 border border-white/5">
+                        <div class="w-12 h-12 rounded-2xl bg-pink-500/10 flex items-center justify-center mb-6">
+                            <i data-lucide="brain" class="text-pink-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 italic">AI & MLOps</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">PyTorch</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Kubeflow</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">MLflow</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">LLM Ops</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">NLP</span>
                         </div>
                     </div>
-
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-5 text-blue-400 flex items-center">
-                            <i data-lucide="code" class="w-6 h-6 mr-3"></i>
-                            Programming & Databases
-                        </h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="skill-chip bg-slate-800 text-yellow-400 py-2 px-4 rounded-full text-sm transition duration-300">Python</span>
-                            <span class="skill-chip bg-slate-800 text-yellow-400 py-2 px-4 rounded-full text-sm transition duration-3Details">Go (GoLang)</span>
-                            <span class="skill-chip bg-slate-800 text-yellow-400 py-2 px-4 rounded-full text-sm transition duration-300">Bash / Shell Scripting</span>
-                            <span class="skill-chip bg-slate-800 text-yellow-400 py-2 px-4 rounded-full text-sm transition duration-300">SQL / PostgreSQL</span>
-                            <span class="skill-chip bg-slate-800 text-yellow-400 py-2 px-4 rounded-full text-sm transition duration-300">NoSQL (MongoDB)</span>
+                    <div class="p-8 rounded-3xl bg-slate-900/50 border border-white/5">
+                        <div class="w-12 h-12 rounded-2xl bg-yellow-500/10 flex items-center justify-center mb-6">
+                            <i data-lucide="code-2" class="text-yellow-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 italic">Programming</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Python</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">GoLang</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Bash</span>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="py-20 md:py-28">
+        <section id="projects" class="py-24">
             <div class="container mx-auto px-6">
-                <h2 class="section-title text-3xl font-bold mb-10 text-white">Key Projects</h2>
-                <p class="text-lg mb-8 text-slate-400">A selection of  demonstrating my capability in both scalable infrastructure and intelligent systems.</p>
+                <div class="flex justify-between items-end mb-16">
+                    <div>
+                        <h2 class="text-4xl font-bold section-heading mb-4">Selected Work</h2>
+                        <p class="text-slate-400">Case studies in automation and intelligence.</p>
+                    </div>
+                    <a href="https://github.com/muathaf" class="hidden md:flex items-center text-blue-400 hover:text-white transition">
+                        Full Archive <i data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <div class="bg-slate-800 p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-blue-500/30 hover:border-blue-500 border border-slate-700">
-                        <i data-lucide="git-branch" class="w-8 h-8 text-blue-400 mb-3"></i>
-                        <h3 class="text-xl font-semibold mb-2 text-white">Full-Stack MLOps Pipeline on GCP</h3>
-                        <p class="text-slate-400 text-sm mb-4">DevOps / AI</p>
-                        <p class="text-slate-300 mb-4">
-                            Automated CI/CD pipeline for deploying a neural net model to Google Kubernetes Engine (GKE) using Terraform for infrastructure provisioning and Kubeflow for workflow orchestration.
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="group glass-card p-10 rounded-[2rem] hover:bg-slate-900 transition duration-500 border-l-4 border-l-blue-500">
+                        <span class="text-xs font-mono text-blue-500 mb-4 block">01 / DEVOPS + AI</span>
+                        <h3 class="text-2xl font-bold mb-4 group-hover:text-blue-400 transition">GCP MLOps Pipeline</h3>
+                        <p class="text-slate-400 mb-8 leading-relaxed">
+                            Architected an end-to-end automated deployment for neural networks on GKE using Terraform. Integrated Kubeflow to manage complex ML training workflows.
                         </p>
-                        <a href="https://github.com/muathaf" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium flex items-center">
-                            View Code <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                        <a href="#" class="flex items-center font-bold text-sm tracking-widest uppercase group-hover:translate-x-2 transition transform">
+                            View Case Study <i data-lucide="chevron-right" class="ml-2 w-4 h-4"></i>
                         </a>
                     </div>
-
-                    <div class="bg-slate-800 p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-green-500/30 hover:border-green-500 border border-slate-700">
-                        <i data-lucide="server-cog" class="w-8 h-8 text-green-400 mb-3"></i>
-                        <h3 class="text-xl font-semibold mb-2 text-white">Terraform Multi-Cloud Module</h3>
-                        <p class="text-slate-400 text-sm mb-4">DevOps / IaC</p>
-                        <p class="text-slate-300 mb-4">
-                            Designed and implemented reusable Terraform modules for VPC, compute, and networking across AWS and Azure, reducing infrastructure deployment time by 40%.
+                    <div class="group glass-card p-10 rounded-[2rem] hover:bg-slate-900 transition duration-500 border-l-4 border-l-pink-500">
+                        <span class="text-xs font-mono text-pink-500 mb-4 block">02 / RESEARCH</span>
+                        <h3 class="text-2xl font-bold mb-4 group-hover:text-pink-400 transition">Domain-Specific LLM Fine-Tuning</h3>
+                        <p class="text-slate-400 mb-8 leading-relaxed">
+                            Thesis project focusing on LoRA-based fine-tuning of open-source models (Llama/Mistral) for high-accuracy specialized industry tasks.
                         </p>
-                        <a href="https://github.com/muathaf" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium flex items-center">
-                            View Code <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                        <a href="#" class="flex items-center font-bold text-sm tracking-widest uppercase group-hover:translate-x-2 transition transform">
+                            Read Thesis <i data-lucide="chevron-right" class="ml-2 w-4 h-4"></i>
                         </a>
                     </div>
-
-                    <div class="bg-slate-800 p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-pink-500/30 hover:border-pink-500 border border-slate-700">
-                        <i data-lucide="book-open-check" class="w-8 h-8 text-pink-400 mb-3"></i>
-                        <h3 class="text-xl font-semibold mb-2 text-white">Masters AI Thesis: LLM Fine-Tuning</h3>
-                        <p class="text-slate-400 text-sm mb-4">AI / Research</p>
-                        <p class="text-slate-300 mb-4">
-                            Research and prototype focusing on fine-tuning small, open-source Large Language Models (LLMs) for domain-specific tasks using LoRA methods and Pytorch.
-                        </p>
-                        <a href="https://github.com/muathaf" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium flex items-center">
-                            View Paper/Code <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
-                        </a>
-                    </div>
-
-                    <div class="bg-slate-800 p-6 rounded-xl shadow-xl transition duration-300 hover:shadow-yellow-500/30 hover:border-yellow-500 border border-slate-700">
-                        <i data-lucide="bar-chart-4" class="w-8 h-8 text-yellow-400 mb-3"></i>
-                        <h3 class="text-xl font-semibold mb-2 text-white">Real-Time Model Monitoring & Drift</h3>
-                        <p class="text-slate-400 text-sm mb-4">MLOps / Data</Ske>
-                        <p class="text-slate-300 mb-4">
-                            Built a monitoring system using Prometheus, Grafana, and Evidently AI to track model performance, detect data drift, and trigger automated retraining alerts.
-                        </p>
-                        <a href="https://github.com/muathaf" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium flex items-center">
-                            View Code <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
-                        </a>
-                    </div>
-                    </div>
+                </div>
             </div>
         </section>
-        
-        <section id="education" class="py-20 md:py-28 bg-slate-900 border-t border-b border-slate-800">
+
+        <section id="education" class="py-24 bg-white/5">
             <div class="container mx-auto px-6">
-                <h2 class="section-title text-3xl font-bold mb-10 text-white">Academic Background</h2>
-                
-                <div class="space-y-8 max-w-4xl mx-auto">
-                    
-                    <div class="bg-slate-800 p-6 rounded-xl shadow-lg flex flex-col sm:flex-row justify-between items-start sm:items-center border border-slate-700">
+                <h2 class="text-3xl font-bold mb-12 section-heading text-center italic">Academic Pedigree</h2>
+                <div class="max-w-4xl mx-auto space-y-4">
+                    <div class="flex flex-col md:flex-row justify-between p-8 glass-card rounded-2xl items-center text-center md:text-left">
                         <div>
-                            <p class="text-xl font-semibold text-blue-400">Master of Science in Artificial Intelligence</p>
-                            <p class="text-slate-300">University of the Cumberlands</p>
-                            <p class="text-slate-400 mt-2">Relevant Coursework: Deep Learning, MLOps, Statistical Modeling, Big Data.</p>
+                            <h4 class="text-xl font-bold text-white">M.S. in Artificial Intelligence</h4>
+                            <p class="text-slate-400 italic">University of the Cumberlands</p>
                         </div>
-                        <span class="mt-3 sm:mt-0 text-md font-medium px-3 py-1 bg-blue-600 text-white rounded-full">
-                            Pursuing (Expected 2026)
-                        </span>
+                        <div class="mt-4 md:mt-0 px-4 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm font-bold uppercase tracking-widest">
+                            Candidate 2026
+                        </div>
                     </div>
-
-                    <div class="bg-slate-800 p-6 rounded-xl shadow-lg flex flex-col sm:flex-row justify-between items-start sm:items-center border border-slate-700">
+                    <div class="flex flex-col md:flex-row justify-between p-8 glass-card rounded-2xl items-center text-center md:text-left">
                         <div>
-                            <p class="text-xl font-semibold text-white">Master of Science in Information Technology</p>
-                            <p class="text-slate-300">University of the Cumberlands</p>
-                            <p class="text-slate-400 mt-2">Focus: Enterprise Systems, Cloud Computing Fundamentals, Project Management.</p>
+                            <h4 class="text-xl font-bold text-white">M.S. in Information Technology</h4>
+                            <p class="text-slate-400 italic">University of the Cumberlands</p>
                         </div>
-                        <span class="mt-3 sm:mt-0 text-md font-medium px-3 py-1 bg-slate-600 text-white rounded-full">
-                            Graduated 2024
-                        </span>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-20 md:py-28">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title text-3xl font-bold mb-10 text-white">Contact</h2>
-                
-                <div class="max-w-xl mx-auto text-center">
-                    <p class="text-lg mb-8 text-slate-300">
-                        I'm always open to discussing new opportunities in DevOps, MLOps, or AI research. Feel free to connect!
-                    </p>
-                    
-                    <div class="space-y-4 sm:space-y-0 sm:space-x-6 flex flex-col sm:flex-row justify-center">
-                        <a href="mailto:muathaf.it@gmail.com" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-500 transition duration-300 flex items-center justify-center">
-                            <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
-                            Email
-                        </a>
-                        <a href="https://www.linkedin.com/in/muathaf/" target="_blank" class="px-6 py-3 bg-slate-700 text-slate-200 font-semibold rounded-lg shadow-lg hover:bg-slate-600 transition duration-300 flex items-center justify-center">
-                            <i data-lucide="linkedin" class="w-5 h-5 mr-2"></i>
-                            LinkedIn
-                        </a>
-                        <a href="https://github.com/muathaf" target="_blank" class="px-6 py-3 bg-slate-700 text-slate-200 font-semibold rounded-lg shadow-lg hover:bg-slate-600 transition duration-300 flex items-center justify-center">
-                            <i data-lucide="github" class="w-5 h-5 mr-2"></i>
-                            GitHub
-                        </a>
+                        <div class="mt-4 md:mt-0 px-4 py-1 bg-slate-700 text-slate-300 rounded-full text-sm font-bold uppercase tracking-widest">
+                            Class of 2024
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section id="contact" class="py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-5xl md:text-6xl font-extrabold mb-8 tracking-tighter">Let's build something <span class="text-gradient">resilient.</span></h2>
+                <p class="text-slate-400 mb-12 text-lg">Currently available for high-impact consulting and MLOps roles.</p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="mailto:muathaf.it@gmail.com" class="flex items-center px-10 py-5 bg-white text-black font-black rounded-2xl hover:bg-blue-400 transition duration-300">
+                        <i data-lucide="mail" class="mr-3"></i> EMAIL ME
+                    </a>
+                    <div class="flex gap-4">
+                        <a href="https://linkedin.com/in/muathaf" class="p-5 glass-card rounded-2xl hover:text-blue-400 transition"><i data-lucide="linkedin"></i></a>
+                        <a href="https://github.com/muathaf" class="p-5 glass-card rounded-2xl hover:text-white transition"><i data-lucide="github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="bg-slate-900 border-t border-slate-800 py-6 text-center text-slate-500">
-                <p class="text-sm text-center">&copy; 2026 muathaf.com | All rights reserved.</p>
-    </footer>
-        </div>
-    </footer>
+    <footer class="py-12 border-t border-white/5 text-center text-slate-500 text-sm tracking-widest uppercase">
+        <p>&copy; 2026 MUATHAF // MLOPS ENGINEER</p>
+    </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navLinks = mobileMenu.querySelectorAll('a');
-
-            // Toggle Mobile Menu
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                // Optional: Change icon on toggle
-                const icon = mobileMenuButton.querySelector('i');
-                if (mobileMenu.classList.contains('hidden')) {
-                    icon.setAttribute('data-lucide', 'menu');
-                } else {
-                    icon.setAttribute('data-lucide', 'x');
-                }
-                lucide.createIcons(); // Re-render icon
+        // Smooth scroll and simple mobile toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            // Logic for a real mobile menu could be added here
+            alert("Mobile menu clicked - Implement overlay as needed.");
+        });
+    </script>
+</body>
+</html>
