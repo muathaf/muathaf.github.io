@@ -1,312 +1,585 @@
+
+Conversation with Gemini
+You said
 <!DOCTYPE html>
+
 <html lang="en" class="scroll-smooth">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" type="image/png" href="favicon.png">
+
     <link rel="apple-touch-icon" href="favicon.png">
+
     
-    <title>SLMTZ | Premium Cleaning Company</title>
+
+    <title>Muathaf | MLOps & Cloud Architect</title>
+
     
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     
+
     <style>
+
         body {
+
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #020617; /* Deep dark slate for a premium feel */
+
+            background-color: #020617;
+
             color: #f8fafc;
+
         }
+
         .glass-card {
+
             background: rgba(15, 23, 42, 0.6);
+
             backdrop-filter: blur(12px);
+
             border: 1px solid rgba(255, 255, 255, 0.08);
+
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
         }
+
         .glass-card:hover {
-            border-color: rgba(6, 182, 212, 0.5); /* Cyan border on hover for a "clean" feel */
+
+            border-color: rgba(59, 130, 246, 0.5);
+
             background: rgba(15, 23, 42, 0.8);
+
             transform: translateY(-4px);
+
         }
+
         .text-gradient {
-            /* Cyan to Blue gradient representing water/cleanliness */
-            background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
+
+            background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%);
+
             -webkit-background-clip: text;
+
             -webkit-text-fill-color: transparent;
+
         }
+
         .nav-link {
+
             position: relative;
+
             letter-spacing: 0.05em;
+
         }
+
         .nav-link::after {
+
             content: '';
+
             position: absolute;
+
             width: 0;
+
             height: 1px;
+
             bottom: -2px;
+
             left: 0;
-            background: #22d3ee;
+
+            background: #60a5fa;
+
             transition: width 0.3s ease;
+
         }
+
         .nav-link:hover::after {
+
             width: 100%;
+
         }
+
         #mobile-menu {
+
             transition: all 0.3s ease-in-out;
+
             max-height: 0;
+
             overflow: hidden;
+
             opacity: 0;
+
         }
+
         #mobile-menu.active {
+
             max-height: 500px;
+
             opacity: 1;
+
             padding: 2rem 1.5rem;
+
         }
+
     </style>
+
 </head>
+
 <body onload="lucide.createIcons()">
 
+
+
     <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-slate-950/90 backdrop-blur-xl">
+
         <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+
             <a href="#" class="flex items-center space-x-2 group">
-                <span class="text-2xl font-bold tracking-tighter text-gradient italic">S.</span>
-                <span class="text-sm font-bold tracking-[0.3em] group-hover:text-cyan-400 transition uppercase">SLMTZ</span>
+
+                <span class="text-2xl font-bold tracking-tighter text-gradient italic">M.</span>
+
+                <span class="text-sm font-bold tracking-[0.3em] group-hover:text-blue-400 transition uppercase">Muathaf</span>
+
             </a>
+
             
+
             <nav class="hidden md:flex space-x-10 text-[11px] font-bold tracking-[0.2em] text-slate-400">
+
                 <a href="#about" class="nav-link hover:text-white transition">ABOUT</a>
-                <a href="#services" class="nav-link hover:text-white transition">SERVICES</a>
-                <a href="#standards" class="nav-link hover:text-white transition">STANDARDS</a>
-                <a href="#contact" class="px-5 py-2 border border-cyan-500/50 text-cyan-400 rounded-full hover:bg-cyan-500 hover:text-white transition duration-300">BOOK NOW</a>
+
+                <a href="#skills" class="nav-link hover:text-white transition">STACK</a>
+
+                <a href="#projects" class="nav-link hover:text-white transition">WORK</a>
+
+                <a href="#contact" class="px-5 py-2 border border-blue-500/50 text-blue-400 rounded-full hover:bg-blue-500 hover:text-white transition duration-300">CONTACT</a>
+
             </nav>
 
+
+
             <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+
                 <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+
             </button>
+
         </div>
+
+
 
         <div id="mobile-menu" class="md:hidden bg-slate-950 border-b border-white/5 space-y-6 shadow-2xl">
-            <a href="#about" class="block text-sm font-bold tracking-widest text-slate-300 hover:text-cyan-400">ABOUT</a>
-            <a href="#services" class="block text-sm font-bold tracking-widest text-slate-300 hover:text-cyan-400">SERVICES</a>
-            <a href="#standards" class="block text-sm font-bold tracking-widest text-slate-300 hover:text-cyan-400">STANDARDS</a>
-            <a href="#contact" class="block text-sm font-bold tracking-widest text-cyan-400">BOOK NOW</a>
+
+            <a href="#about" class="block text-sm font-bold tracking-widest text-slate-300 hover:text-blue-400">ABOUT</a>
+
+            <a href="#skills" class="block text-sm font-bold tracking-widest text-slate-300 hover:text-blue-400">STACK</a>
+
+            <a href="#projects" class="block text-sm font-bold tracking-widest text-slate-300 hover:text-blue-400">WORK</a>
+
+            <a href="#contact" class="block text-sm font-bold tracking-widest text-blue-400">CONTACT</a>
+
         </div>
+
     </header>
 
+
+
     <main>
+
         <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.08),transparent_70%)]"></div>
+
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08),transparent_70%)]"></div>
+
             <div class="container mx-auto px-6 text-center relative z-10">
+
                 <div class="mb-10 inline-block relative">
-                    <div class="w-40 h-40 rounded-3xl bg-slate-800 flex items-center justify-center border border-white/10 shadow-2xl rotate-3 hover:rotate-0 transition duration-500">
-                        <i data-lucide="droplets" class="w-20 h-20 text-cyan-400"></i>
+
+                    <img src="IMG_9769.jpg" alt="Muathaf" class="w-40 h-40 rounded-3xl object-cover border border-white/10 shadow-2xl rotate-3 hover:rotate-0 transition duration-500">
+
+                    <div class="absolute -bottom-2 -right-2 bg-blue-600 p-2 rounded-lg shadow-xl">
+
+                        <i data-lucide="shield-check" class="w-5 h-5 text-white"></i>
+
                     </div>
-                    <div class="absolute -bottom-2 -right-2 bg-cyan-600 p-2 rounded-lg shadow-xl">
-                        <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
-                    </div>
+
                 </div>
-                <h2 class="text-cyan-500 font-bold tracking-[0.4em] text-xs mb-6 uppercase">Precision Sanitation</h2>
+
+                <h2 class="text-blue-500 font-bold tracking-[0.4em] text-xs mb-6 uppercase">Scalable Infrastructure & AI</h2>
+
                 <h1 class="text-5xl md:text-8xl font-extrabold mb-8 tracking-tighter leading-none">
-                    SLMTZ <span class="text-gradient">Cleaning.</span>
+
+                    MLOps <span class="text-gradient">Architect.</span>
+
                 </h1>
+
                 <p class="max-w-xl mx-auto text-slate-400 text-lg font-light leading-relaxed mb-12">
-                    Delivering immaculate environments. Specializing in hospital-grade sanitation, pristine residential care, and comprehensive deep cleaning services.
+
+                    Specializing in the deployment and automation of high-performance machine learning systems within secure cloud environments.
+
                 </p>
+
                 <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <a href="#services" class="px-10 py-4 bg-white text-black font-bold rounded-full hover:bg-cyan-500 hover:text-white transition duration-300">Our Services</a>
-                    <a href="#contact" class="px-10 py-4 glass-card text-white font-bold rounded-full transition">Get a Quote</a>
+
+                    <a href="#projects" class="px-10 py-4 bg-white text-black font-bold rounded-full hover:bg-blue-500 hover:text-white transition duration-300">View Work</a>
+
+                    <a href="#contact" class="px-10 py-4 glass-card text-white font-bold rounded-full transition">Get In Touch</a>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <section id="about" class="py-32 border-t border-white/5">
+
             <div class="container mx-auto px-6">
+
                 <div class="grid lg:grid-cols-2 gap-20 items-center">
+
                     <div>
-                        <h3 class="text-cyan-500 font-bold tracking-widest text-xs uppercase mb-6">Our Mission</h3>
-                        <h2 class="text-4xl font-bold mb-8 tracking-tight text-white">Engineering the future of clean spaces.</h2>
+
+                        <h3 class="text-blue-500 font-bold tracking-widest text-xs uppercase mb-6">Introduction</h3>
+
+                        <h2 class="text-4xl font-bold mb-8 tracking-tight text-white">Engineering the future of intelligent infrastructure.</h2>
+
                         <div class="space-y-6 text-slate-400 text-lg leading-relaxed">
-                            <p>At SLMTZ Cleaning Company, we believe that a pristine environment is the foundation for health, productivity, and peace of mind. We go beyond surface-level aesthetics.</p>
-                            <p>We bridge the gap between standard cleaning and advanced hygienic restoration, ensuring that every facility—from intensive care units to private homes—is fundamentally safe and spotless.</p>
+
+                            <p>I am a technology professional with a unique academic background, holding an MS in IT and currently completing a Master of Science in Artificial Intelligence. My focus lies at the intersection of enterprise reliability and cutting-edge data science.</p>
+
+                            <p>I bridge the gap between model development and production-ready scaling, ensuring that AI systems are not only accurate but also robust and highly available.</p>
+
                         </div>
+
                     </div>
+
                     <div class="glass-card p-10 rounded-[2.5rem]">
-                        <h4 class="text-xl font-bold mb-8 italic text-cyan-400">Core Capabilities</h4>
+
+                        <h4 class="text-xl font-bold mb-8 italic text-blue-400">Core Expertise</h4>
+
                         <div class="space-y-8">
+
                             <div class="flex gap-6">
-                                <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="shield-check" class="text-cyan-400 w-6 h-6"></i></div>
+
+                                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="cloud" class="text-blue-400 w-6 h-6"></i></div>
+
                                 <div>
-                                    <p class="font-bold text-white mb-1">Infection Control</p>
-                                    <p class="text-sm text-slate-400">Advanced implementation of EPA-approved disinfectants and cross-contamination prevention protocols.</p>
+
+                                    <p class="font-bold text-white mb-1">Cloud Automation</p>
+
+                                    <p class="text-sm text-slate-400">Advanced implementation of Terraform, Kubernetes, and secure AWS/GCP architectures.</p>
+
                                 </div>
+
                             </div>
+
                             <div class="flex gap-6">
-                                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="microscope" class="text-blue-400 w-6 h-6"></i></div>
+
+                                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center shrink-0"><i data-lucide="brain" class="text-purple-400 w-6 h-6"></i></div>
+
                                 <div>
-                                    <p class="font-bold text-white mb-1">Detail-Oriented Precision</p>
-                                    <p class="text-sm text-slate-400">Systematic cleaning life-cycles, ensuring no corner is missed during deep housing restorations.</p>
+
+                                    <p class="font-bold text-white mb-1">MLOps Lifecycle</p>
+
+                                    <p class="text-sm text-slate-400">Streamlining model training, automated deployment, and real-time drift monitoring.</p>
+
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <section id="services" class="py-32 bg-slate-900/30 border-y border-white/5">
+
+
+        <section class="py-32 bg-slate-900/30 border-y border-white/5">
+
             <div class="container mx-auto px-6">
-                <h2 class="text-center text-xs font-bold tracking-[0.5em] text-slate-500 uppercase mb-20">Specialized Services</h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="glass-card p-8 rounded-3xl border-t-cyan-500/30 border-t-4 hover:border-t-cyan-500">
-                        <div class="w-14 h-14 bg-slate-900 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
-                            <i data-lucide="heart-pulse" class="text-cyan-400 w-7 h-7"></i>
-                        </div>
-                        <h3 class="font-bold text-2xl text-white mb-4">Hospital & Medical</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Rigorous sanitization for clinics, surgical centers, and patient rooms meeting the highest healthcare compliance standards.
-                        </p>
-                        <ul class="space-y-2 text-xs font-semibold text-slate-300">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-500"></i> Terminal Cleaning</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-500"></i> Biohazard Protocol</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-500"></i> Sterile Environment Prep</li>
-                        </ul>
-                    </div>
 
-                    <div class="glass-card p-8 rounded-3xl border-t-blue-500/30 border-t-4 hover:border-t-blue-500">
-                        <div class="w-14 h-14 bg-slate-900 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
-                            <i data-lucide="spray-can" class="text-blue-400 w-7 h-7"></i>
-                        </div>
-                        <h3 class="font-bold text-2xl text-white mb-4">Deep Cleaning</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Intensive, top-to-bottom scrubbing for current housing, neglected properties, and intensive restorative sanitation.
-                        </p>
-                        <ul class="space-y-2 text-xs font-semibold text-slate-300">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500"></i> Grime & Scale Removal</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500"></i> Carpet & Upholstery Care</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500"></i> Air Quality Restoration</li>
-                        </ul>
-                    </div>
-
-                    <div class="glass-card p-8 rounded-3xl border-t-indigo-500/30 border-t-4 hover:border-t-indigo-500">
-                        <div class="w-14 h-14 bg-slate-900 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
-                            <i data-lucide="home" class="text-indigo-400 w-7 h-7"></i>
-                        </div>
-                        <h3 class="font-bold text-2xl text-white mb-4">Residential</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Routine upkeep, move-in/move-out details, and post-construction cleanups tailored to your home's unique needs.
-                        </p>
-                        <ul class="space-y-2 text-xs font-semibold text-slate-300">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-500"></i> Move-In / Move-Out</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-500"></i> Post-Construction</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-500"></i> Premium Maintenance</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="standards" class="py-32 border-t border-white/5">
-            <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto text-center mb-16">
-                    <h3 class="text-cyan-500 font-bold tracking-widest text-xs uppercase mb-4">Quality Blueprint</h3>
-                    <h2 class="text-3xl font-bold mb-6">The SLMTZ Standard</h2>
-                    <p class="text-slate-400">Our systematic approach to ensuring flawless results across every property we service.</p>
+
+                    <h3 class="text-blue-500 font-bold tracking-widest text-xs uppercase mb-4">Architecture</h3>
+
+                    <h2 class="text-3xl font-bold mb-6">Production MLOps Blueprint</h2>
+
+                    <p class="text-slate-400">My standard architectural approach to model lifecycle management, integrating CI/CD with automated validation layers.</p>
+
                 </div>
+
                 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="glass-card p-10 rounded-[2rem] group">
-                        <div class="flex items-center justify-between mb-8">
-                            <p class="text-cyan-500 font-bold text-[10px] tracking-widest uppercase">Methodology</p>
-                            <i data-lucide="clipboard-check" class="w-6 h-6 text-slate-500 group-hover:text-cyan-400 transition"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">Color-Coded Prevention</h3>
-                        <p class="text-slate-400 leading-relaxed">
-                            We utilize a strict color-coded microfiber system to prevent cross-contamination between restrooms, clinical areas, and living spaces. Equipment used in high-risk zones never enters clean zones.
-                        </p>
-                    </div>
-                    <div class="glass-card p-10 rounded-[2rem] group">
-                        <div class="flex items-center justify-between mb-8">
-                            <p class="text-blue-500 font-bold text-[10px] tracking-widest uppercase">Technology</p>
-                            <i data-lucide="wind" class="w-6 h-6 text-slate-500 group-hover:text-blue-400 transition"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">HEPA Filtration</h3>
-                        <p class="text-slate-400 leading-relaxed">
-                            Our industrial vacuums feature advanced HEPA filtration, capturing 99.97% of airborne particles, dust mites, and pathogens—drastically improving indoor air quality during deep cleans.
-                        </p>
-                    </div>
+
+                                
+
+                <div class="mt-12 glass-card p-10 rounded-[3rem] text-center italic text-slate-400">
+
+                    <p class="max-w-2xl mx-auto">This architectural visualization demonstrates standard deployment workflows for distributed AI systems, focusing on data reliability and model versioning.</p>
+
                 </div>
+
             </div>
+
         </section>
 
-        <section id="certifications" class="py-32 bg-white/5">
+
+
+        <section id="skills" class="py-32">
+
             <div class="container mx-auto px-6">
-                <h2 class="text-center text-3xl font-bold mb-16 italic text-gradient">Safety & Compliance</h2>
-                <div class="max-w-4xl mx-auto space-y-4">
-                    <div class="flex flex-col md:flex-row justify-between p-8 glass-card rounded-2xl items-center">
-                        <div class="flex items-center gap-4">
-                            <i data-lucide="badge-check" class="text-cyan-400 w-8 h-8"></i>
-                            <div>
-                                <h4 class="text-xl font-bold text-white">Healthcare Compliance Ready</h4>
-                                <p class="text-slate-400 italic">HIPAA & OSHA Standard Protocols</p>
-                            </div>
+
+                <h2 class="text-center text-xs font-bold tracking-[0.5em] text-slate-500 uppercase mb-20">Technical Arsenal</h2>
+
+                <div class="grid md:grid-cols-3 gap-6">
+
+                    <div class="glass-card p-8 rounded-3xl">
+
+                        <h3 class="font-bold text-blue-400 mb-6 flex items-center gap-2 italic">Cloud & DevOps</h3>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="px-4 py-2 bg-slate-900 rounded-lg text-xs font-semibold">Kubernetes</span>
+
+                            <span class="px-4 py-2 bg-slate-900 rounded-lg text-xs font-semibold">Terraform</span>
+
+                            <span class="px-4 py-2 bg-slate-900 rounded-lg text-xs font-semibold">AWS / GCP</span>
+
+                            <span class="px-4 py-2 bg-slate-900 rounded-lg text-xs font-semibold">CI/CD Pipelines</span>
+
                         </div>
-                        <div class="mt-4 md:mt-0 px-4 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-[10px] font-bold tracking-widest">CERTIFIED</div>
+
                     </div>
-                    <div class="flex flex-col md:flex-row justify-between p-8 glass-card rounded-2xl items-center">
-                        <div class="flex items-center gap-4">
-                            <i data-lucide="leaf" class="text-green-400 w-8 h-8"></i>
-                            <div>
-                                <h4 class="text-xl font-bold text-white">Eco-Friendly Solutions Available</h4>
-                                <p class="text-slate-400 italic">Safe for pets, families, and patients</p>
-                            </div>
+
+                    <div class="glass-card p-8 rounded-3xl">
+
+                        <h3 class="font-bold text-purple-400 mb-6 flex items-center gap-2 italic">MLOps & AI</h3>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="px-4 py-2 bg-slate-900 rounded-lg text-xs font-semibold">PyTorch</span>
+
+                            <span class="px-4 py-2 bg-slate-900 rounded-lg text-xs font-semibold">Kubeflow</span>
+
+                            <span class="px-4 py-2 bg-slate-900 rounded-lg text-xs font-semibold">MLflow</span>
+
+                            <span class="px-4 py-2 bg-slate-900 rounded-lg text-xs font-semibold">LLM Fine-tuning</span>
+
                         </div>
-                        <div class="mt-4 md:mt-0 px-4 py-1 bg-slate-700 text-slate-300 rounded-full text-[10px] font-bold tracking-widest">VERIFIED</div>
+
                     </div>
+
+                    <div class="glass-card p-8 rounded-3xl">
+
+                        <h3 class="font-bold text-yellow-400 mb-6 flex items-center gap-2 italic">Engineering</h3>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="px-4 py-2 bg-slate-900 rounded-lg text-xs font-semibold">Python</span>
+
+                            <span class="px-4 py-2 bg-slate-900 rounded-lg text-xs font-semibold">GoLang</span>
+
+                            <span class="px-4 py-2 bg-slate-900 rounded-lg text-xs font-semibold">PostgreSQL</span>
+
+                            <span class="px-4 py-2 bg-slate-900 rounded-lg text-xs font-semibold">Shell Scripting</span>
+
+                        </div>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </section>
+
+
+
+        <section id="projects" class="py-32 border-t border-white/5">
+
+            <div class="container mx-auto px-6">
+
+                <div class="flex justify-between items-end mb-16">
+
+                    <h2 class="text-4xl font-bold tracking-tight">Case Studies</h2>
+
+                    <p class="text-slate-500 font-medium">Proven results in automation and research.</p>
+
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+
+                    <div class="glass-card p-10 rounded-[2rem] group">
+
+                        <p class="text-blue-500 font-bold text-[10px] tracking-widest mb-4 uppercase">Infrastructure</p>
+
+                        <h3 class="text-2xl font-bold mb-4">GCP MLOps Pipeline</h3>
+
+                        <p class="text-slate-400 mb-8 leading-relaxed">Automated deployment architecture for neural networks on GKE using Terraform for rapid, repeatable infrastructure provisioning.</p>
+
+                        <a href="https://github.com/muathaf" target="_blank" class="flex items-center text-sm font-bold group-hover:text-blue-400 transition">VIEW GITHUB <i data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></i></a>
+
+                    </div>
+
+                    <div class="glass-card p-10 rounded-[2rem] group border-l-purple-500/30 border-l-4">
+
+                        <p class="text-purple-500 font-bold text-[10px] tracking-widest mb-4 uppercase">Research</p>
+
+                        <h3 class="text-2xl font-bold mb-4">Domain LLM Fine-Tuning</h3>
+
+                        <p class="text-slate-400 mb-8 leading-relaxed">Specialized AI research focusing on LoRA techniques to adapt open-source large language models to specific industry datasets.</p>
+
+                        <a href="https://github.com/muathaf" target="_blank" class="flex items-center text-sm font-bold group-hover:text-purple-400 transition">READ PAPER <i data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></i></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="education" class="py-32 bg-white/5">
+
+            <div class="container mx-auto px-6">
+
+                <h2 class="text-center text-3xl font-bold mb-16 italic text-gradient">Academic Foundation</h2>
+
+                <div class="max-w-4xl mx-auto space-y-4">
+
+                    <div class="flex flex-col md:flex-row justify-between p-8 glass-card rounded-2xl items-center">
+
+                        <div>
+
+                            <h4 class="text-xl font-bold text-white">M.S. in Artificial Intelligence</h4>
+
+                            <p class="text-slate-400 italic">University of the Cumberlands</p>
+
+                        </div>
+
+                        <div class="mt-4 md:mt-0 px-4 py-1 bg-blue-500/20 text-blue-400 rounded-full text-[10px] font-bold tracking-widest">CANDIDATE 2026</div>
+
+                    </div>
+
+                    <div class="flex flex-col md:flex-row justify-between p-8 glass-card rounded-2xl items-center">
+
+                        <div>
+
+                            <h4 class="text-xl font-bold text-white">M.S. in Information Technology</h4>
+
+                            <p class="text-slate-400 italic">University of the Cumberlands</p>
+
+                        </div>
+
+                        <div class="mt-4 md:mt-0 px-4 py-1 bg-slate-700 text-slate-300 rounded-full text-[10px] font-bold tracking-widest">CLASS OF 2024</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
 
         <section id="contact" class="py-32">
+
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-6xl font-extrabold mb-10 tracking-tight">Ready for a <span class="text-gradient">Spotless Space?</span></h2>
-                <p class="text-slate-400 mb-10 max-w-xl mx-auto">Contact our team today to schedule an on-site evaluation or receive a custom quote for your residential, healthcare, or commercial property.</p>
+
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-10 tracking-tight">Connect for <span class="text-gradient">Strategic Collaboration.</span></h2>
+
                 <div class="flex flex-wrap justify-center gap-6">
-                    <a href="mailto:contact@slmtzcleaning.com" class="px-12 py-5 bg-white text-black font-bold rounded-2xl hover:scale-105 transition duration-300 uppercase tracking-widest text-xs">Email Us</a>
-                    <a href="tel:+1234567890" class="px-12 py-5 glass-card text-white font-bold rounded-2xl hover:scale-105 transition duration-300 uppercase tracking-widest text-xs flex items-center gap-2">
-                        <i data-lucide="phone" class="w-4 h-4"></i> Call Now
-                    </a>
+
+                    <a href="mailto:muathaf.it@gmail.com" class="px-12 py-5 bg-white text-black font-bold rounded-2xl hover:scale-105 transition duration-300 uppercase tracking-widest text-xs">Email Direct</a>
+
+                    <div class="flex gap-4">
+
+                        <a href="https://linkedin.com/in/muathaf" target="_blank" class="p-5 glass-card rounded-2xl text-slate-400 hover:text-blue-400"><i data-lucide="linkedin"></i></a>
+
+                        <a href="https://github.com/muathaf" target="_blank" class="p-5 glass-card rounded-2xl text-slate-400 hover:text-white"><i data-lucide="github"></i></a>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </section>
+
     </main>
 
+
+
     <footer class="py-12 border-t border-white/5 text-center text-[10px] font-bold tracking-[0.3em] text-slate-600 uppercase">
-        <p>&copy; 2026 SLMTZ Cleaning Company. Premium Sanitation Services.</p>
+
+        <p>&copy; 2026 Muathaf. MLOps & Cloud Systems Architect.</p>
+
     </footer>
 
+
+
     <script>
+
         document.addEventListener('DOMContentLoaded', () => {
+
             const menuBtn = document.getElementById('mobile-menu-button');
+
             const mobileMenu = document.getElementById('mobile-menu');
+
             const menuIcon = document.getElementById('menu-icon');
 
+
+
             menuBtn.addEventListener('click', () => {
+
                 mobileMenu.classList.toggle('active');
+
                 const isOpen = mobileMenu.classList.contains('active');
+
                 menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+
                 lucide.createIcons();
+
             });
 
+
+
             const links = mobileMenu.querySelectorAll('a');
+
             links.forEach(link => {
+
                 link.addEventListener('click', () => {
+
                     mobileMenu.classList.remove('active');
+
                     menuIcon.setAttribute('data-lucide', 'menu');
+
                     lucide.createIcons();
+
                 });
+
             });
+
         });
+
     </script>
+
 </body>
+
 </html>
+
