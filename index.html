@@ -112,12 +112,7 @@
     animation: fadeUp 0.8s 0.2s forwards;
   }
 
-  .hero-tag::before {
-    content: '';
-    display: block;
-    width: 30px; height: 1px;
-    background: var(--gold);
-  }
+
 
   .hero-name {
     font-family: 'Cormorant Garamond', serif;
@@ -925,7 +920,7 @@
       UAE, Saudi Arabia, and Qatar specifically. Available for relocation from mid-2026.
       Open to remote-first roles with GCC-based companies too.
     </p>
-    <a href="/cdn-cgi/l/email-protection#d9b4acb8adb1b8bff7b0ad99beb4b8b0b5f7bab6b4" class="btn-primary reveal"><span class="__cf_email__" data-cfemail="14796175607c75723a7d60547379757d783a777b79">[email&#160;protected]</span></a>
+    <a id="email-btn" href="#" class="btn-primary reveal" onclick="this.href='mai'+'lto:'+'muathaf.it'+'@'+'gmail.com'">muathaf.it@gmail.com</a>
     <div class="contact-links reveal">
       <a href="https://www.linkedin.com/in/muathaf/" target="_blank" class="contact-link">LinkedIn</a>
       <a href="https://github.com/muathaf" target="_blank" class="contact-link">GitHub</a>
@@ -939,7 +934,7 @@
   <span class="footer-note">MLOps · AI · GCC-Ready · 2026</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   var reveals = document.querySelectorAll('.reveal');
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry, i) {
