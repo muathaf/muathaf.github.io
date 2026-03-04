@@ -65,14 +65,13 @@
     transition: padding 0.3s;
   }
 
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 0.05em;
+  .nav-logo-mark {
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s;
   }
+  .nav-logo-mark:hover { opacity: 0.75; }
 
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 
@@ -656,7 +655,13 @@
 </svg>
 
 <nav>
-  <a href="#hero" class="nav-logo">M.</a>
+  <a href="#hero" class="nav-logo-mark">
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="20,2 37,11 37,29 20,38 3,29 3,11" fill="none" stroke="#c9a84c" stroke-width="1.2"/>
+      <polygon points="20,7 32,13.5 32,26.5 20,33 8,26.5 8,13.5" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+      <text x="20" y="25" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" font-weight="700" fill="#c9a84c">M</text>
+    </svg>
+  </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -672,7 +677,7 @@
     <h1 class="hero-name">Mua<span>thaf</span></h1>
     <p class="hero-title">Building the infrastructure that makes AI work.</p>
     <p class="hero-desc">
-      Civil engineer turned AI practitioner. Dual master's degrees in IT and Artificial Intelligence.
+      Dual master's degrees in IT and Artificial Intelligence from the United States.
       I design ML pipelines, deploy models to production, and build systems that scale —
       seeking impactful roles in the Gulf's growing AI ecosystem.
     </p>
@@ -703,12 +708,7 @@
         built, and managed, which means I think about AI systems the same way: structurally,
         at scale, with real-world consequences.
       </p>
-      <p>
-        I moved to the <strong>United States</strong> to pursue dual master's degrees in
-        <strong>Information Technology</strong> and <strong>Artificial Intelligence</strong>,
-        funding my own education through freelance work, system administration, and operations roles.
-        No safety net — just the work.
-      </p>
+
       <p>
         I am now seeking <strong>MLOps and AI Engineering roles in the GCC</strong> — a region
         where the most ambitious, high-impact AI work is happening right now.
@@ -723,8 +723,8 @@
           <div class="stat-label">Years in the US</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">3</div>
-          <div class="stat-label">Engineering Fields</div>
+          <div class="stat-num">3+</div>
+          <div class="stat-label">Years of Tech Work</div>
         </div>
         <div class="stat-card">
           <div class="stat-num">GCC</div>
@@ -744,12 +744,6 @@
           <div class="edu-school">United States · Cloud, Systems, DevOps</div>
           <span class="edu-year">2022 — 2024</span>
         </div>
-        <div class="edu-item">
-          <div class="edu-degree">BE — Civil Engineering</div>
-          <div class="edu-school">India · Telangana · Structural Systems</div>
-          <span class="edu-year">2017 — 2021</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -795,17 +789,6 @@
         <span class="skill-tag">Terraform</span>
         <span class="skill-tag">Nginx</span>
         <span class="skill-tag">PostgreSQL</span>
-      </div>
-    </div>
-    <div class="skill-group reveal">
-      <div class="skill-group-icon">&#127959;</div>
-      <div class="skill-group-title">Domain Knowledge</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Smart Infrastructure AI</span>
-        <span class="skill-tag">Civil-Tech</span>
-        <span class="skill-tag">Structural Analysis</span>
-        <span class="skill-tag">GIS / Spatial Data</span>
-        <span class="skill-tag">BIM Concepts</span>
       </div>
     </div>
   </div>
@@ -944,7 +927,7 @@
       UAE, Saudi Arabia, and Qatar specifically. Available for relocation from mid-2026.
       Open to remote-first roles with GCC-based companies too.
     </p>
-    <a href="mailto:muathaf.it@gmail.com" class="btn-primary reveal">muathaf.it@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#d9b4acb8adb1b8bff7b0ad99beb4b8b0b5f7bab6b4" class="btn-primary reveal"><span class="__cf_email__" data-cfemail="14796175607c75723a7d60547379757d783a777b79">[email&#160;protected]</span></a>
     <div class="contact-links reveal">
       <a href="https://www.linkedin.com/in/muathaf/" target="_blank" class="contact-link">LinkedIn</a>
       <a href="https://github.com/muathaf" target="_blank" class="contact-link">GitHub</a>
@@ -958,7 +941,7 @@
   <span class="footer-note">MLOps · AI · GCC-Ready · 2026</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   var reveals = document.querySelectorAll('.reveal');
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry, i) {
@@ -987,6 +970,5 @@
     });
   });
 </script>
-
 </body>
 </html>
