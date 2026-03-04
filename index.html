@@ -1,95 +1,1119 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muathaf | AI & IT Professional</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Muathaf — MLOps & AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg2: #0f0f1a;
+    --bg3: #13131f;
+    --gold: #c9a84c;
+    --gold2: #e8c97a;
+    --gold-dim: rgba(201,168,76,0.15);
+    --text: #e8e4d9;
+    --text-muted: #7a7568;
+    --text-mid: #b0a99a;
+    --accent: #4a7fa5;
+    --border: rgba(201,168,76,0.12);
+    --radius: 4px;
+  }
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+background: var(–bg);
+color: var(–text);
+font-family: ‘DM Sans’, sans-serif;
+font-weight: 300;
+line-height: 1.7;
+overflow-x: hidden;
+}
+
+/* ── Geometric background ── */
+body::before {
+content: ‘’;
+position: fixed;
+inset: 0;
+background-image:
+radial-gradient(circle at 20% 20%, rgba(201,168,76,0.04) 0%, transparent 50%),
+radial-gradient(circle at 80% 80%, rgba(74,127,165,0.04) 0%, transparent 50%);
+pointer-events: none;
+z-index: 0;
+}
+
+.geo-pattern {
+position: fixed;
+top: 0; right: 0;
+width: 600px; height: 600px;
+opacity: 0.03;
+pointer-events: none;
+z-index: 0;
+}
+
+/* ── Nav ── */
+nav {
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 100;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1.5rem 6vw;
+background: rgba(10,10,15,0.85);
+backdrop-filter: blur(20px);
+border-bottom: 1px solid var(–border);
+transition: all 0.3s;
+}
+
+.nav-logo {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.6rem;
+font-weight: 600;
+color: var(–gold);
+letter-spacing: 0.05em;
+text-decoration: none;
+}
+
+.nav-links {
+display: flex;
+gap: 2.5rem;
+list-style: none;
+}
+
+.nav-links a {
+color: var(–text-muted);
+text-decoration: none;
+font-size: 0.82rem;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(–gold); }
+
+/* ── Hero ── */
+#hero {
+min-height: 100vh;
+display: flex;
+align-items: center;
+padding: 0 6vw;
+position: relative;
+z-index: 1;
+}
+
+.hero-inner {
+max-width: 900px;
+}
+
+.hero-tag {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.78rem;
+color: var(–gold);
+letter-spacing: 0.1em;
+margin-bottom: 2rem;
+opacity: 0;
+animation: fadeUp 0.8s 0.2s forwards;
+}
+
+.hero-tag::before {
+content: ‘’;
+display: block;
+width: 30px;
+height: 1px;
+background: var(–gold);
+}
+
+.hero-name {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(4rem, 10vw, 8rem);
+font-weight: 700;
+line-height: 0.9;
+letter-spacing: -0.02em;
+color: var(–text);
+opacity: 0;
+animation: fadeUp 0.8s 0.4s forwards;
+}
+
+.hero-name span { color: var(–gold); }
+
+.hero-title {
+margin-top: 1.5rem;
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(1.2rem, 3vw, 1.8rem);
+font-weight: 300;
+color: var(–text-mid);
+opacity: 0;
+animation: fadeUp 0.8s 0.6s forwards;
+}
+
+.hero-desc {
+margin-top: 1.5rem;
+max-width: 560px;
+color: var(–text-muted);
+font-size: 0.95rem;
+line-height: 1.8;
+opacity: 0;
+animation: fadeUp 0.8s 0.8s forwards;
+}
+
+.hero-cta {
+margin-top: 2.5rem;
+display: flex;
+gap: 1rem;
+flex-wrap: wrap;
+opacity: 0;
+animation: fadeUp 0.8s 1s forwards;
+}
+
+.btn-primary {
+padding: 0.85rem 2rem;
+background: var(–gold);
+color: #0a0a0f;
+font-size: 0.85rem;
+font-weight: 600;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+text-decoration: none;
+border: none;
+cursor: pointer;
+transition: all 0.2s;
+}
+
+.btn-primary:hover {
+background: var(–gold2);
+transform: translateY(-2px);
+}
+
+.btn-outline {
+padding: 0.85rem 2rem;
+background: transparent;
+color: var(–text-mid);
+font-size: 0.85rem;
+font-weight: 400;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+text-decoration: none;
+border: 1px solid var(–border);
+transition: all 0.2s;
+}
+
+.btn-outline:hover {
+border-color: var(–gold);
+color: var(–gold);
+}
+
+.hero-scroll {
+position: absolute;
+bottom: 2.5rem;
+left: 6vw;
+display: flex;
+align-items: center;
+gap: 0.8rem;
+font-size: 0.75rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–text-muted);
+opacity: 0;
+animation: fadeUp 0.8s 1.2s forwards;
+}
+
+.scroll-line {
+width: 40px;
+height: 1px;
+background: var(–text-muted);
+animation: scrollLine 2s 2s infinite;
+}
+
+/* ── Section base ── */
+section {
+position: relative;
+z-index: 1;
+padding: 7rem 6vw;
+}
+
+.section-label {
+display: flex;
+align-items: center;
+gap: 1rem;
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.75rem;
+color: var(–gold);
+letter-spacing: 0.15em;
+text-transform: uppercase;
+margin-bottom: 1rem;
+}
+
+.section-label::after {
+content: ‘’;
+flex: 1;
+max-width: 60px;
+height: 1px;
+background: var(–gold);
+opacity: 0.4;
+}
+
+.section-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(2.2rem, 5vw, 3.5rem);
+font-weight: 600;
+line-height: 1.1;
+margin-bottom: 3rem;
+}
+
+/* ── About ── */
+#about {
+background: var(–bg2);
+}
+
+.about-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 5rem;
+align-items: start;
+}
+
+.about-text p {
+color: var(–text-mid);
+font-size: 0.95rem;
+line-height: 1.9;
+margin-bottom: 1.2rem;
+}
+
+.about-text strong {
+color: var(–text);
+font-weight: 500;
+}
+
+.about-stats {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1.5rem;
+margin-top: 2.5rem;
+}
+
+.stat-card {
+padding: 1.5rem;
+border: 1px solid var(–border);
+background: var(–bg3);
+position: relative;
+overflow: hidden;
+}
+
+.stat-card::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0;
+width: 3px;
+height: 100%;
+background: var(–gold);
+}
+
+.stat-num {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 2.2rem;
+font-weight: 700;
+color: var(–gold);
+line-height: 1;
+}
+
+.stat-label {
+font-size: 0.78rem;
+color: var(–text-muted);
+letter-spacing: 0.08em;
+margin-top: 0.3rem;
+}
+
+.edu-timeline {
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+}
+
+.edu-item {
+padding: 1.5rem;
+border: 1px solid var(–border);
+background: var(–bg3);
+transition: border-color 0.2s;
+}
+
+.edu-item:hover { border-color: var(–gold); }
+
+.edu-degree {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.2rem;
+font-weight: 600;
+color: var(–text);
+margin-bottom: 0.3rem;
+}
+
+.edu-school {
+font-size: 0.82rem;
+color: var(–text-muted);
+letter-spacing: 0.06em;
+}
+
+.edu-year {
+display: inline-block;
+margin-top: 0.8rem;
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.73rem;
+color: var(–gold);
+background: var(–gold-dim);
+padding: 0.2rem 0.6rem;
+border-radius: 2px;
+}
+
+/* ── Skills ── */
+#skills { background: var(–bg); }
+
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 2rem;
+}
+
+.skill-group {
+padding: 2rem;
+border: 1px solid var(–border);
+background: var(–bg2);
+transition: all 0.3s;
+}
+
+.skill-group:hover {
+border-color: rgba(201,168,76,0.3);
+transform: translateY(-4px);
+box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.skill-group-icon {
+font-size: 1.8rem;
+margin-bottom: 1rem;
+}
+
+.skill-group-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.3rem;
+font-weight: 600;
+color: var(–text);
+margin-bottom: 1.2rem;
+}
+
+.skill-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+}
+
+.skill-tag {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.72rem;
+padding: 0.3rem 0.75rem;
+background: var(–bg3);
+color: var(–text-mid);
+border: 1px solid var(–border);
+letter-spacing: 0.05em;
+transition: all 0.2s;
+}
+
+.skill-tag:hover {
+background: var(–gold-dim);
+color: var(–gold);
+border-color: var(–gold);
+}
+
+/* ── Projects ── */
+#projects { background: var(–bg2); }
+
+.projects-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+gap: 2rem;
+}
+
+.project-card {
+border: 1px solid var(–border);
+background: var(–bg3);
+overflow: hidden;
+transition: all 0.3s;
+position: relative;
+}
+
+.project-card:hover {
+border-color: rgba(201,168,76,0.35);
+transform: translateY(-6px);
+box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.project-card-header {
+padding: 2rem 2rem 0;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+}
+
+.project-num {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 3rem;
+font-weight: 700;
+color: var(–border);
+line-height: 1;
+}
+
+.project-links {
+display: flex;
+gap: 0.8rem;
+}
+
+.project-link {
+width: 36px; height: 36px;
+border: 1px solid var(–border);
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(–text-muted);
+text-decoration: none;
+transition: all 0.2s;
+font-size: 0.85rem;
+}
+
+.project-link:hover {
+border-color: var(–gold);
+color: var(–gold);
+}
+
+.project-card-body {
+padding: 1rem 2rem 2rem;
+}
+
+.project-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.5rem;
+font-weight: 600;
+color: var(–text);
+margin-bottom: 0.8rem;
+}
+
+.project-desc {
+font-size: 0.88rem;
+color: var(–text-muted);
+line-height: 1.7;
+margin-bottom: 1.5rem;
+}
+
+.project-stack {
+display: flex;
+flex-wrap: wrap;
+gap: 0.4rem;
+}
+
+.project-tech {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.68rem;
+padding: 0.25rem 0.6rem;
+background: var(–gold-dim);
+color: var(–gold);
+border: 1px solid rgba(201,168,76,0.2);
+}
+
+.project-status {
+position: absolute;
+top: 1rem;
+right: 1rem;
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.65rem;
+letter-spacing: 0.1em;
+padding: 0.2rem 0.5rem;
+text-transform: uppercase;
+}
+
+.status-live {
+background: rgba(74,165,74,0.15);
+color: #4aa54a;
+border: 1px solid rgba(74,165,74,0.3);
+}
+
+.status-wip {
+background: rgba(165,130,74,0.15);
+color: #a5824a;
+border: 1px solid rgba(165,130,74,0.3);
+}
+
+/* ── Experience ── */
+#experience { background: var(–bg); }
+
+.exp-list {
+display: flex;
+flex-direction: column;
+gap: 0;
+max-width: 800px;
+}
+
+.exp-item {
+display: grid;
+grid-template-columns: 140px 1fr;
+gap: 2.5rem;
+padding: 2.5rem 0;
+border-bottom: 1px solid var(–border);
+position: relative;
+}
+
+.exp-item:first-child { padding-top: 0; }
+
+.exp-year {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 0.78rem;
+color: var(–text-muted);
+letter-spacing: 0.08em;
+padding-top: 0.3rem;
+}
+
+.exp-role {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.3rem;
+font-weight: 600;
+color: var(–text);
+margin-bottom: 0.3rem;
+}
+
+.exp-company {
+font-size: 0.82rem;
+color: var(–gold);
+letter-spacing: 0.06em;
+margin-bottom: 0.8rem;
+}
+
+.exp-desc {
+font-size: 0.88rem;
+color: var(–text-muted);
+line-height: 1.7;
+}
+
+/* ── Contact ── */
+#contact {
+background: var(–bg2);
+text-align: center;
+}
+
+.contact-inner {
+max-width: 600px;
+margin: 0 auto;
+}
+
+.contact-inner .section-label {
+justify-content: center;
+}
+
+.contact-inner .section-label::after {
+display: none;
+}
+
+.contact-desc {
+color: var(–text-muted);
+font-size: 0.95rem;
+margin-bottom: 2.5rem;
+line-height: 1.8;
+}
+
+.contact-links {
+display: flex;
+justify-content: center;
+gap: 1rem;
+flex-wrap: wrap;
+margin-top: 2rem;
+}
+
+.contact-link {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+padding: 0.8rem 1.5rem;
+border: 1px solid var(–border);
+color: var(–text-muted);
+text-decoration: none;
+font-size: 0.82rem;
+letter-spacing: 0.08em;
+transition: all 0.2s;
+}
+
+.contact-link:hover {
+border-color: var(–gold);
+color: var(–gold);
+}
+
+/* ── Footer ── */
+footer {
+padding: 2rem 6vw;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-top: 1px solid var(–border);
+background: var(–bg);
+position: relative;
+z-index: 1;
+}
+
+.footer-name {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.1rem;
+color: var(–gold);
+}
+
+.footer-note {
+font-size: 0.75rem;
+color: var(–text-muted);
+}
+
+/* ── Location badge ── */
+.location-badge {
+display: inline-flex;
+align-items: center;
+gap: 0.4rem;
+font-size: 0.78rem;
+color: var(–text-muted);
+background: var(–bg3);
+border: 1px solid var(–border);
+padding: 0.4rem 0.9rem;
+margin-top: 1.5rem;
+}
+
+.loc-dot {
+width: 6px; height: 6px;
+border-radius: 50%;
+background: #4aa54a;
+animation: pulse 2s infinite;
+}
+
+/* ── Divider ── */
+.divider {
+width: 60px;
+height: 1px;
+background: var(–gold);
+opacity: 0.4;
+margin: 2rem 0;
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(20px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollLine {
+0%, 100% { transform: scaleX(1); opacity: 1; }
+50% { transform: scaleX(0.5); opacity: 0.4; }
+}
+
+@keyframes pulse {
+0%, 100% { opacity: 1; transform: scale(1); }
+50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* ── Reveal on scroll ── */
+.reveal {
+opacity: 0;
+transform: translateY(30px);
+transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+opacity: 1;
+transform: none;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+.about-grid { grid-template-columns: 1fr; gap: 3rem; }
+.exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+.nav-links { display: none; }
+.projects-grid { grid-template-columns: 1fr; }
+.about-stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+
 </head>
 <body>
 
-    <nav id="navbar">
-        <div class="nav-content">
-            <h1 class="logo">M<span class="accent">.</span></h1>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<!-- Geometric SVG background -->
+
+<svg class="geo-pattern" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="geo" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <polygon points="30,0 60,15 60,45 30,60 0,45 0,15" fill="none" stroke="#c9a84c" stroke-width="0.5"/>
+      <polygon points="30,10 50,20 50,40 30,50 10,40 10,20" fill="none" stroke="#c9a84c" stroke-width="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="600" fill="url(#geo)"/>
+</svg>
+
+<!-- Nav -->
+
+<nav>
+  <a href="#hero" class="nav-logo">M.</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">MLOps · AI Engineer · Open to GCC Relocation</div>
+    <h1 class="hero-name">Mua<span>thaf</span></h1>
+    <p class="hero-title">Building the infrastructure that makes AI work.</p>
+    <p class="hero-desc">
+      Civil engineer turned AI practitioner. Dual master's degrees in IT and Artificial Intelligence.
+      I design ML pipelines, deploy models to production, and build systems that scale —
+      seeking impactful roles in the Gulf's growing AI ecosystem.
+    </p>
+    <div class="location-badge" style="opacity:0;animation:fadeUp 0.8s 0.9s forwards">
+      <span class="loc-dot"></span>
+      United States · Relocating to GCC 2025
+    </div>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="scroll-line"></span>
+    Scroll
+  </div>
+</section>
+
+<!-- About -->
+
+<section id="about">
+  <div class="section-label">01 — About</div>
+  <h2 class="section-title reveal">The story behind the engineer.</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>
+        I grew up in <strong>Kamareddy, Telangana, India</strong>, and built my foundation in <strong>Civil Engineering</strong> before pivoting fully into technology. What seems like an unusual path is actually my edge — I understand how infrastructure is designed, built, and managed, which means I think about AI systems the same way: structurally, at scale, with real-world consequences.
+      </p>
+      <p>
+        I moved to the <strong>United States</strong> to pursue dual master's degrees in <strong>Information Technology</strong> and <strong>Artificial Intelligence</strong>, funding my own education through freelance work, system administration, and operations roles. No safety net — just the work.
+      </p>
+      <p>
+        I'm now seeking <strong>MLOps and AI Engineering roles in the GCC</strong> — a region I believe is where the most ambitious, high-impact AI work is happening right now. I bring a rare combination of academic rigour and the practical mindset of someone who has always had to make things work.
+      </p>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-num">2+</div>
+          <div class="stat-label">Master's Degrees</div>
         </div>
-    </nav>
-
-    <section id="hero" class="hidden">
-        <div class="hero-content">
-            <p class="greeting">Hi, my name is</p>
-            <h1 class="name">Muathaf.</h1>
-            <h2 class="subtitle">I bridge IT Operations and AI.</h2>
-            <p class="summary">I am a resilient technologist with dual Master's degrees in IT and Artificial Intelligence. Based in the USA, looking for impactful Cloud, DevOps, and AI roles in the GCC.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                <a href="https://www.linkedin.com/in/muathaf/" target="_blank" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-            </div>
+        <div class="stat-card">
+          <div class="stat-num">4+</div>
+          <div class="stat-label">Years in the US</div>
         </div>
-    </section>
-
-    <section id="about" class="hidden">
-        <h2 class="section-title">01. <span class="accent">Background</span></h2>
-        <div class="about-container">
-            <div class="about-text">
-                <p>My journey is defined by adaptability and a relentless work ethic. Over the last four years, I have navigated complex academic landscapes in the US, funding my own education while mastering modern technology stacks.</p>
-                <p>From managing e-commerce digital storefronts to supporting Linux systems, I bring a unique blend of hands-on grit and high-level academic knowledge.</p>
-            </div>
-            <div class="education-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h3>MS, Artificial Intelligence</h3>
-                    <p class="timeline-date">USA | Expected Oct 2026</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h3>MS, Information Technology</h3>
-                    <p class="timeline-date">USA | Graduated 2024</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h3>BE, Civil Engineering</h3>
-                    <p class="timeline-date">India | Graduated 2021</p>
-                </div>
-            </div>
+        <div class="stat-card">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Engineering Fields</div>
         </div>
-    </section>
-
-    <section id="skills" class="hidden">
-        <h2 class="section-title">02. <span class="accent">Tech Arsenal</span></h2>
-        <div class="skills-grid">
-            <div class="skill-card"><i class="fa-brands fa-aws"></i><span>AWS & Cloud</span></div>
-            <div class="skill-card"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
-            <div class="skill-card"><i class="fa-brands fa-linux"></i><span>Linux SysAdmin</span></div>
-            <div class="skill-card"><i class="fa-brands fa-python"></i><span>Python</span></div>
-            <div class="skill-card"><i class="fa-solid fa-server"></i><span>IT Support</span></div>
-            <div class="skill-card"><i class="fa-brands fa-shopify"></i><span>E-commerce Ops</span></div>
-            <div class="skill-card"><i class="fa-solid fa-code"></i><span>Web Tech</span></div>
-            <div class="skill-card"><i class="fa-solid fa-brain"></i><span>AI & ML Basics</span></div>
+        <div class="stat-card">
+          <div class="stat-num">GCC</div>
+          <div class="stat-label">Target Market</div>
         </div>
-    </section>
-
-    <section id="contact" class="hidden">
-        <h2 class="section-title">03. <span class="accent">What's Next?</span></h2>
-        <div class="contact-content">
-            <p>I am actively seeking Junior DevOps, Cloud, and IT Support roles in Dubai, Abu Dhabi, or Riyadh. Let's connect and build something great.</p>
-            <div class="contact-links">
-                <a href="mailto:muathaf.it@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> muathaf.it@gmail.com</a>
-            </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="edu-timeline">
+        <div class="edu-item">
+          <div class="edu-degree">MS — Artificial Intelligence</div>
+          <div class="edu-school">United States · Focus: MLOps, ML Systems</div>
+          <span class="edu-year">2024 — 2026</span>
         </div>
-    </section>
+        <div class="edu-item">
+          <div class="edu-degree">MS — Information Technology</div>
+          <div class="edu-school">United States · Cloud, Systems, DevOps</div>
+          <span class="edu-year">2022 — 2024</span>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">BE — Civil Engineering</div>
+          <div class="edu-school">India · Telangana · Structural Systems</div>
+          <span class="edu-year">2017 — 2021</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>Built with <i class="fa-solid fa-code"></i> and deployed via Git.</p>
-    </footer>
+<!-- Skills -->
 
-    <script src="script.js"></script>
+<section id="skills">
+  <div class="section-label">02 — Arsenal</div>
+  <h2 class="section-title reveal">What I work with.</h2>
+  <div class="skills-grid">
+    <div class="skill-group reveal">
+      <div class="skill-group-icon">⚙️</div>
+      <div class="skill-group-title">MLOps & Infrastructure</div>
+      <div class="skill-tags">
+        <span class="skill-tag">MLflow</span>
+        <span class="skill-tag">Kubeflow</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">FastAPI</span>
+        <span class="skill-tag">CI/CD</span>
+        <span class="skill-tag">Model Serving</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-group-icon">🤖</div>
+      <div class="skill-group-title">AI & Machine Learning</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">TensorFlow</span>
+        <span class="skill-tag">PyTorch</span>
+        <span class="skill-tag">Scikit-learn</span>
+        <span class="skill-tag">LLMs</span>
+        <span class="skill-tag">NLP</span>
+        <span class="skill-tag">Computer Vision</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-group-icon">☁️</div>
+      <div class="skill-group-title">Cloud & DevOps</div>
+      <div class="skill-tags">
+        <span class="skill-tag">AWS</span>
+        <span class="skill-tag">Linux</span>
+        <span class="skill-tag">Bash</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Terraform</span>
+        <span class="skill-tag">Nginx</span>
+        <span class="skill-tag">PostgreSQL</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-group-icon">🏗️</div>
+      <div class="skill-group-title">Domain Knowledge</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Smart Infrastructure AI</span>
+        <span class="skill-tag">Civil-Tech</span>
+        <span class="skill-tag">Structural Analysis</span>
+        <span class="skill-tag">GIS / Spatial Data</span>
+        <span class="skill-tag">BIM Concepts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+
+<section id="projects">
+  <div class="section-label">03 — Projects</div>
+  <h2 class="section-title reveal">Things I have built.</h2>
+  <div class="projects-grid">
+
+```
+<div class="project-card reveal">
+  <span class="project-status status-live">Live</span>
+  <div class="project-card-header">
+    <div class="project-num">01</div>
+    <div class="project-links">
+      <a href="https://github.com/muathaf" class="project-link" target="_blank">↗</a>
+    </div>
+  </div>
+  <div class="project-card-body">
+    <div class="project-title">ML Pipeline Orchestrator</div>
+    <div class="project-desc">
+      End-to-end ML pipeline with automated training, versioning, and deployment. 
+      Features experiment tracking, model registry, and REST API serving with rollback capability.
+    </div>
+    <div class="project-stack">
+      <span class="project-tech">MLflow</span>
+      <span class="project-tech">FastAPI</span>
+      <span class="project-tech">Docker</span>
+      <span class="project-tech">PostgreSQL</span>
+      <span class="project-tech">Python</span>
+    </div>
+  </div>
+</div>
+
+<div class="project-card reveal">
+  <span class="project-status status-wip">In Progress</span>
+  <div class="project-card-header">
+    <div class="project-num">02</div>
+    <div class="project-links">
+      <a href="https://github.com/muathaf" class="project-link" target="_blank">↗</a>
+    </div>
+  </div>
+  <div class="project-card-body">
+    <div class="project-title">Smart Infrastructure Anomaly Detection</div>
+    <div class="project-desc">
+      Applying computer vision and sensor-data ML models to detect structural anomalies 
+      in civil infrastructure — bridges, buildings, roads. Civil engineering meets AI.
+    </div>
+    <div class="project-stack">
+      <span class="project-tech">PyTorch</span>
+      <span class="project-tech">OpenCV</span>
+      <span class="project-tech">AWS S3</span>
+      <span class="project-tech">Streamlit</span>
+    </div>
+  </div>
+</div>
+
+<div class="project-card reveal">
+  <span class="project-status status-live">Live</span>
+  <div class="project-card-header">
+    <div class="project-num">03</div>
+    <div class="project-links">
+      <a href="https://muathaf.com" class="project-link" target="_blank">↗</a>
+    </div>
+  </div>
+  <div class="project-card-body">
+    <div class="project-title">Linux SysAdmin Automation Suite</div>
+    <div class="project-desc">
+      Collection of Bash and Python scripts for monitoring, log analysis, and automated 
+      incident response. Built during hands-on Linux support work. Used in production.
+    </div>
+    <div class="project-stack">
+      <span class="project-tech">Python</span>
+      <span class="project-tech">Bash</span>
+      <span class="project-tech">Linux</span>
+      <span class="project-tech">Cron</span>
+      <span class="project-tech">Nginx</span>
+    </div>
+  </div>
+</div>
+
+<!-- ADD MORE PROJECTS HERE — copy a project-card block above -->
+```
+
+  </div>
+</section>
+
+<!-- Experience -->
+
+<section id="experience">
+  <div class="section-label">04 — Experience</div>
+  <h2 class="section-title reveal">Where I have worked.</h2>
+  <div class="exp-list">
+
+```
+<div class="exp-item reveal">
+  <div class="exp-year">2023 – 2024</div>
+  <div>
+    <div class="exp-role">Linux System Admin Support</div>
+    <div class="exp-company">Freelance / Contract · USA</div>
+    <div class="exp-desc">
+      Supported a Linux system administration environment across multiple servers. 
+      Handled monitoring, incident triage, Bash automation, and system maintenance. 
+      Built scripts for log analysis and alerting. Worked for 6 months in a real production environment.
+    </div>
+  </div>
+</div>
+
+<div class="exp-item reveal">
+  <div class="exp-year">2022 – 2025</div>
+  <div>
+    <div class="exp-role">IT & E-commerce Operations</div>
+    <div class="exp-company">Freelance Gigs · Remote</div>
+    <div class="exp-desc">
+      Managed digital storefronts, inventory systems, and operations support for 
+      small businesses. Built and maintained web presences. Handled data entry, 
+      reporting, and tech support across multiple clients simultaneously.
+    </div>
+  </div>
+</div>
+
+<div class="exp-item reveal">
+  <div class="exp-year">2021 – 2022</div>
+  <div>
+    <div class="exp-role">Operations Cashier & Coordinator</div>
+    <div class="exp-company">Restaurant & Furniture Company · USA</div>
+    <div class="exp-desc">
+      Self-funded my master's degree by working dual roles in restaurant operations 
+      and furniture company cash management. Developed discipline, reliability, 
+      and the ability to manage pressure — skills that transfer directly into production systems.
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- Contact -->
+
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label">05 — Contact</div>
+    <h2 class="section-title reveal">Let's talk.</h2>
+    <p class="contact-desc reveal">
+      I am actively looking for <strong>MLOps, AI Engineering, and Data Engineering roles in the GCC</strong> — 
+      UAE, Saudi Arabia, and Qatar specifically. Available for relocation from mid-2026.
+      Open to remote-first roles with GCC-based companies too.
+    </p>
+    <a href="mailto:muathaf.it@gmail.com" class="btn-primary reveal" style="display:inline-block">
+      muathaf.it@gmail.com
+    </a>
+    <div class="contact-links reveal">
+      <a href="https://www.linkedin.com/in/muathaf/" target="_blank" class="contact-link">
+        <span>in</span> LinkedIn
+      </a>
+      <a href="https://github.com/muathaf" target="_blank" class="contact-link">
+        <span>⌥</span> GitHub
+      </a>
+      <a href="https://muathaf.com" target="_blank" class="contact-link">
+        <span>↗</span> Website
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+
+<footer>
+  <span class="footer-name">Muathaf</span>
+  <span class="footer-note">MLOps · AI · GCC-Ready · 2026</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav shrink on scroll
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.padding = window.scrollY > 50 ? '1rem 6vw' : '1.5rem 6vw';
+  });
+
+  // Active nav link
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 200) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? '#c9a84c' : '';
+    });
+  });
+</script>
+
 </body>
 </html>
