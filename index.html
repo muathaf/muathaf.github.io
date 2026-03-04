@@ -25,11 +25,12 @@
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background-color: #0a0a0f !important; }
 
 body {
-background: var(–bg);
-color: var(–text);
+background-color: #0a0a0f !important;
+background: #0a0a0f !important;
+color: #e8e4d9 !important;
 font-family: ‘DM Sans’, sans-serif;
 font-weight: 300;
 line-height: 1.7;
@@ -271,9 +272,8 @@ margin-bottom: 3rem;
 }
 
 /* ── About ── */
-#about {
-background: var(–bg2);
-}
+#hero { background-color: #0a0a0f; }
+#about { background-color: #0f0f1a; }
 
 .about-grid {
 display: grid;
@@ -304,7 +304,7 @@ margin-top: 2.5rem;
 .stat-card {
 padding: 1.5rem;
 border: 1px solid var(–border);
-background: var(–bg3);
+background-color: #13131f;
 position: relative;
 overflow: hidden;
 }
@@ -342,7 +342,7 @@ gap: 1.5rem;
 .edu-item {
 padding: 1.5rem;
 border: 1px solid var(–border);
-background: var(–bg3);
+background-color: #13131f;
 transition: border-color 0.2s;
 }
 
@@ -374,7 +374,7 @@ border-radius: 2px;
 }
 
 /* ── Skills ── */
-#skills { background: var(–bg); }
+#skills { background-color: #0a0a0f; }
 
 .skills-grid {
 display: grid;
@@ -385,7 +385,7 @@ gap: 2rem;
 .skill-group {
 padding: 2rem;
 border: 1px solid var(–border);
-background: var(–bg2);
+#*SKIP*#
 transition: all 0.3s;
 }
 
@@ -418,7 +418,7 @@ gap: 0.5rem;
 font-family: ‘JetBrains Mono’, monospace;
 font-size: 0.72rem;
 padding: 0.3rem 0.75rem;
-background: var(–bg3);
+background-color: #13131f;
 color: var(–text-mid);
 border: 1px solid var(–border);
 letter-spacing: 0.05em;
@@ -432,7 +432,7 @@ border-color: var(–gold);
 }
 
 /* ── Projects ── */
-#projects { background: var(–bg2); }
+#projects { background-color: #0f0f1a; }
 
 .projects-grid {
 display: grid;
@@ -442,7 +442,7 @@ gap: 2rem;
 
 .project-card {
 border: 1px solid var(–border);
-background: var(–bg3);
+background-color: #13131f;
 overflow: hidden;
 transition: all 0.3s;
 position: relative;
@@ -549,7 +549,7 @@ border: 1px solid rgba(165,130,74,0.3);
 }
 
 /* ── Experience ── */
-#experience { background: var(–bg); }
+#experience { background-color: #0a0a0f; }
 
 .exp-list {
 display: flex;
@@ -600,7 +600,7 @@ line-height: 1.7;
 
 /* ── Contact ── */
 #contact {
-background: var(–bg2);
+#*SKIP*#
 text-align: center;
 }
 
@@ -657,7 +657,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 border-top: 1px solid var(–border);
-background: var(–bg);
+#*SKIP*#
 position: relative;
 z-index: 1;
 }
@@ -680,7 +680,7 @@ align-items: center;
 gap: 0.4rem;
 font-size: 0.78rem;
 color: var(–text-muted);
-background: var(–bg3);
+background-color: #13131f;
 border: 1px solid var(–border);
 padding: 0.4rem 0.9rem;
 margin-top: 1.5rem;
@@ -1058,8 +1058,8 @@ transform: none;
       UAE, Saudi Arabia, and Qatar specifically. Available for relocation from mid-2026.
       Open to remote-first roles with GCC-based companies too.
     </p>
-    <a href="mailto:muathaf.it@gmail.com" class="btn-primary reveal" style="display:inline-block">
-      muathaf.it@gmail.com
+    <a href="/cdn-cgi/l/email-protection#9bf6eefaeff3fafdb5f2efdbfcf6faf2f7b5f8f4f6" class="btn-primary reveal" style="display:inline-block">
+      <span class="__cf_email__" data-cfemail="a5c8d0c4d1cdc4c38bccd1e5c2c8c4ccc98bc6cac8">[email&#160;protected]</span>
     </a>
     <div class="contact-links reveal">
       <a href="https://www.linkedin.com/in/muathaf/" target="_blank" class="contact-link">
@@ -1082,38 +1082,28 @@ transform: none;
   <span class="footer-note">MLOps · AI · GCC-Ready · 2026</span>
 </footer>
 
-<script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
-  // Nav shrink on scroll
-  const nav = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    nav.style.padding = window.scrollY > 50 ? '1rem 6vw' : '1.5rem 6vw';
-  });
+// Scroll reveal
+const reveals = document.querySelectorAll(’.reveal’);
+const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry, i) => {
+if (entry.isIntersecting) {
+setTimeout(() => entry.target.classList.add(‘visible’), i * 80);
+observer.unobserve(entry.target);
+}
+});
+}, { threshold: 0.1 });
+reveals.forEach(el => observer.observe(el));
 
-  // Active nav link
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 200) current = s.id;
-    });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? '#c9a84c' : '';
-    });
-  });
-</script>
+// Nav shrink on scroll
+const nav = document.querySelector(‘nav’);
+window.addEventListener(‘scroll’, () => {
+nav.style.padding = window.scrollY > 50 ? ‘1rem 6vw’ : ‘1.5rem 6vw’;
+});
 
-</body>
-</html>
+// Active nav link
+const sections = document.querySelectorAll(‘section[id]’);
+const navLinks = document.querySelectorAll(’.nav-links a’);
+window.addEventListener(‘scroll’, () => {
+let current = ‘’;
