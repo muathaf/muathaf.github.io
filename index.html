@@ -5,71 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muathaf | AI & IT Professional</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header id="hero">
-        <div class="container">
-            <h1>Hello, I'm <span class="highlight">Muathaf</span>.</h1>
-            <p>A resilient IT & AI Engineer with dual Master's degrees, aiming for impactful roles in the GCC.</p>
-            <a href="#contact" class="btn">Get in Touch</a>
+    <nav id="navbar">
+        <div class="nav-content">
+            <h1 class="logo">M<span class="accent">.</span></h1>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me & Education</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>I am a determined technologist currently finishing my second Master's degree in the USA. My journey is defined by resilience, adaptability, and a hunger for learning. I specialize in bridging the gap between traditional IT operations and modern AI-driven solutions.</p>
-                    <p>I am seeking stability and growth closer to home in the UAE or Saudi Arabia.</p>
+    <section id="hero" class="hidden">
+        <div class="hero-content">
+            <p class="greeting">Hi, my name is</p>
+            <h1 class="name">Muathaf.</h1>
+            <h2 class="subtitle">I bridge IT Operations and AI.</h2>
+            <p class="summary">I am a resilient technologist with dual Master's degrees in IT and Artificial Intelligence. Based in the USA, looking for impactful Cloud, DevOps, and AI roles in the GCC.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="https://www.linkedin.com/in/muathaf/" target="_blank" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="hidden">
+        <h2 class="section-title">01. <span class="accent">Background</span></h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p>My journey is defined by adaptability and a relentless work ethic. Over the last four years, I have navigated complex academic landscapes in the US, funding my own education while mastering modern technology stacks.</p>
+                <p>From managing e-commerce digital storefronts to supporting Linux systems, I bring a unique blend of hands-on grit and high-level academic knowledge.</p>
+            </div>
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3>MS, Artificial Intelligence</h3>
+                    <p class="timeline-date">USA | Expected Oct 2026</p>
                 </div>
-                <div class="education-cards">
-                    <div class="edu-card">
-                        <h3>MS in Artificial Intelligence</h3>
-                        <p>USA (Expected Oct 2026)</p>
-                    </div>
-                    <div class="edu-card">
-                        <h3>MS in Information Technology</h3>
-                        <p>USA (Graduated 2024)</p>
-                    </div>
-                     <div class="edu-card">
-                        <h3>B.E. Civil Engineering</h3>
-                        <p>India (Graduated 2021)</p>
-                    </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3>MS, Information Technology</h3>
+                    <p class="timeline-date">USA | Graduated 2024</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3>BE, Civil Engineering</h3>
+                    <p class="timeline-date">India | Graduated 2021</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">Python (Basic)</div>
-                <div class="skill-item">Linux SysAdmin</div>
-                <div class="skill-item">Docker</div>
-                <div class="skill-item">AWS (EC2/S3)</div>
-                <div class="skill-item">IT Support & Troubleshooting</div>
-                <div class="skill-item">E-commerce Ops (Shopify)</div>
-                <div class="skill-item">HTML/CSS</div>
-                <div class="skill-item">Quick Learner</div>
-            </div>
+    <section id="skills" class="hidden">
+        <h2 class="section-title">02. <span class="accent">Tech Arsenal</span></h2>
+        <div class="skills-grid">
+            <div class="skill-card"><i class="fa-brands fa-aws"></i><span>AWS & Cloud</span></div>
+            <div class="skill-card"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
+            <div class="skill-card"><i class="fa-brands fa-linux"></i><span>Linux SysAdmin</span></div>
+            <div class="skill-card"><i class="fa-brands fa-python"></i><span>Python</span></div>
+            <div class="skill-card"><i class="fa-solid fa-server"></i><span>IT Support</span></div>
+            <div class="skill-card"><i class="fa-brands fa-shopify"></i><span>E-commerce Ops</span></div>
+            <div class="skill-card"><i class="fa-solid fa-code"></i><span>Web Tech</span></div>
+            <div class="skill-card"><i class="fa-solid fa-brain"></i><span>AI & ML Basics</span></div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Let's Connect</h2>
-            <p>I am open to Junior DevOps, IT Support, and Cloud opportunities in Dubai, Abu Dhabi, or Riyadh.</p>
-            <a href="#" class="btn btn-alt">Connect on LinkedIn</a>
+    <section id="contact" class="hidden">
+        <h2 class="section-title">03. <span class="accent">What's Next?</span></h2>
+        <div class="contact-content">
+            <p>I am actively seeking Junior DevOps, Cloud, and IT Support roles in Dubai, Abu Dhabi, or Riyadh. Let's connect and build something great.</p>
+            <div class="contact-links">
+                <a href="mailto:muathaf.it@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> muathaf.it@gmail.com</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Muathaf. Built from scratch.</p>
+        <p>Built with <i class="fa-solid fa-code"></i> and deployed via Git.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
