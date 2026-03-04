@@ -136,7 +136,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 8rem 5vw 5rem;
+  padding: 7rem 5vw 4rem;
   position: relative;
   z-index: 1;
   overflow: visible;
@@ -168,7 +168,7 @@ nav {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 4rem;
-  align-items: end;
+  align-items: center;
 }
 
 .hero-name {
@@ -858,7 +858,7 @@ footer {
 /* ── TABLET (iPad portrait/landscape: 641px–1024px) ── */
 @media (max-width: 1024px) and (min-width: 641px) {
   .hero-main              { grid-template-columns: 1fr; gap: 2rem; }
-  .hero-name              { font-size: clamp(3.5rem, 8vw, 6rem); white-space: normal; }
+  .hero-name              { font-size: clamp(2.5rem, 7vw, 6rem); white-space: nowrap; }
   .hero-right-col         { max-width: 600px; }
   .about-grid             { grid-template-columns: 1fr; gap: 3rem; }
   .skills-grid            { grid-template-columns: 1fr 1fr; }
@@ -882,7 +882,7 @@ footer {
   .hero-eyebrow           { font-size: 0.65rem; margin-bottom: 1.2rem; letter-spacing: 0.1em; }
   .hero-eyebrow::before   { width: 1rem; }
   .hero-main              { grid-template-columns: 1fr; gap: 1.8rem; align-items: start; }
-  .hero-name              { font-size: clamp(2.8rem, 13vw, 4.5rem); white-space: normal; word-break: break-word; line-height: 0.92; }
+  .hero-name              { font-size: clamp(2rem, 11.5vw, 4rem); white-space: nowrap; line-height: 0.92; }
   .hero-name .line3       { font-size: 0.4em; margin-top: 0.6rem; }
   .hero-right-col         { opacity: 0; animation: fadeUp 0.8s 0.6s forwards; }
   .hero-tagline           { font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem; }
