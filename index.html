@@ -151,28 +151,17 @@ body.hovering #cursor-ring { width:48px; height:48px; border-color:var(--blue); 
 .hero-name {
   font-family:var(--ff-d);
   font-size:clamp(4.5rem, 13vw, 13rem);
+  white-space:nowrap;
   font-weight:800;
   line-height:.82;
   letter-spacing:-.04em;
   color:var(--text);
   display:block;
 }
-.hero-name-ghost {
-  font-family:var(--ff-d);
-  font-size:clamp(4.5rem, 13vw, 13rem);
-  font-weight:800;
-  line-height:.82;
-  letter-spacing:-.04em;
-  color:transparent;
-  -webkit-text-stroke:1px rgba(56,189,248,.15);
-  display:block;
-}
+
 
 .hero-bottom {
-  display:grid;
-  grid-template-columns:1fr 420px;
-  gap:4rem;
-  align-items:end;
+  max-width:560px;
   padding-bottom:5rem;
 }
 .hero-desc-col {}
@@ -183,31 +172,7 @@ body.hovering #cursor-ring { width:48px; height:48px; border-color:var(--blue); 
 .hero-desc { font-size:.93rem; color:var(--mid); line-height:1.9; max-width:420px; margin-bottom:2rem; }
 .hero-btns { display:flex; gap:.8rem; flex-wrap:wrap; }
 
-.hero-card-col {}
-.hero-stat-row {
-  display:grid; grid-template-columns:repeat(3,1fr);
-  border:1px solid var(--rule); background:var(--bg1);
-}
-.hero-stat {
-  padding:1.6rem 1.4rem;
-  border-right:1px solid var(--rule);
-  position:relative;
-}
-.hero-stat:last-child { border-right:none; }
-.hero-stat::before {
-  content:''; position:absolute; top:0; left:0; right:0; height:1px;
-  background:linear-gradient(90deg,var(--blue),transparent);
-  transform:scaleX(0); transform-origin:left;
-  transition:transform .5s;
-}
-.hero-stat:hover::before { transform:scaleX(1); }
-.hs-num {
-  font-family:var(--ff-d); font-size:2.6rem; font-weight:800;
-  color:var(--text); line-height:1; letter-spacing:-.04em;
-  margin-bottom:.3rem;
-}
-.hs-num em { font-style:normal; color:var(--blue); font-size:1.3rem; }
-.hs-lbl { font-family:var(--ff-m); font-size:.58rem; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; line-height:1.6; }
+
 
 /* Scroll hint */
 .hero-scroll {
@@ -419,7 +384,7 @@ section { position:relative; z-index:1; }
 .ctag { font-family:var(--ff-m); font-size:.58rem; padding:.27rem .75rem; border:1px solid var(--bline); color:var(--blue); letter-spacing:.06em; }
 
 /* Contact cards */
-.cc-grid { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; }
+.cc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.8rem; }
 .cc {
   text-decoration:none; background:var(--bg2);
   border:1px solid var(--rule); padding:1.9rem;
@@ -473,7 +438,6 @@ footer {
 ═══════════════════════════════════════════ */
 @media(max-width:1080px) and (min-width:641px){
   .hero-bottom { grid-template-columns:1fr; gap:2.5rem; }
-  .hero-stat-row { max-width:420px; }
   .about-grid { grid-template-columns:1fr; gap:3.5rem; }
   .skills-grid { grid-template-columns:1fr 1fr; }
   .bento { grid-template-columns:1fr 1fr; }
@@ -492,9 +456,8 @@ footer {
   .nav-links { display:none; }
   #hero { min-height:auto; padding:0 5vw; }
   .hero-inner { padding-top:7rem; padding-bottom:2rem; }
-  .hero-name, .hero-name-ghost { font-size:clamp(3rem,14vw,5rem); }
-  .hero-bottom { grid-template-columns:1fr; gap:2rem; padding-bottom:3.5rem; }
-  .hero-stat-row { grid-template-columns:repeat(3,1fr); }
+  .hero-name { font-size:clamp(1.8rem,11.5vw,5rem); white-space:nowrap; }
+  .hero-bottom { padding-bottom:3.5rem; }
   .hero-scroll { display:none; }
   .wrap { padding:3.5rem 5vw; }
   .sec-title { font-size:1.8rem; }
@@ -506,7 +469,7 @@ footer {
   .pj-c-inner { grid-template-columns:1fr; }
   .tl-item { grid-template-columns:1fr; gap:.4rem; padding:2rem 0 2rem 2rem; }
   .contact-grid { grid-template-columns:1fr; gap:2.5rem; }
-  .cc-grid { grid-template-columns:1fr 1fr; }
+  .cc-grid { grid-template-columns:1fr; }
   .contact-big { font-size:2.6rem; }
   footer { flex-direction:column; gap:.35rem; text-align:center; padding:1.2rem 5vw; }
 }
@@ -560,7 +523,6 @@ footer {
       MLOps &amp; AI Engineer
     </div>
     <div class="hero-name-wrap">
-      <span class="hero-name-ghost" aria-hidden="true">MUATHAF</span>
       <span class="hero-name" data-splitting>MUATHAF</span>
     </div>
   </div>
@@ -574,22 +536,7 @@ footer {
         <a href="#contact" class="btn-sec">Get in Touch</a>
       </div>
     </div>
-    <div class="hero-card-col g-up">
-      <div class="hero-stat-row">
-        <div class="hero-stat">
-          <div class="hs-num" data-count="2" data-suffix="×">2<em>×</em></div>
-          <div class="hs-lbl">Master's<br>Degrees</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hs-num" data-count="4" data-suffix="+">4<em>+</em></div>
-          <div class="hs-lbl">Years in<br>the US</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hs-num" data-count="3" data-suffix="+">3<em>+</em></div>
-          <div class="hs-lbl">Years of<br>Tech Work</div>
-        </div>
-      </div>
-    </div>
+    
   </div>
 
   <div class="hero-scroll">
@@ -845,14 +792,7 @@ footer {
           </div>
           <div class="cc-body"><div class="cc-label">See my code</div><div class="cc-name">GitHub</div></div>
         </a>
-        <a href="https://muathaf.com" target="_blank" rel="noopener" class="cc">
-          <div class="cc-bar"></div><div class="cc-glow"></div>
-          <div class="cc-top">
-            <div class="cc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
-            <span class="cc-arr">&#8599;</span>
-          </div>
-          <div class="cc-body"><div class="cc-label">Visit my site</div><div class="cc-name">muathaf.com</div></div>
-        </a>
+
       </div>
     </div>
   </div>
@@ -928,8 +868,6 @@ window.addEventListener('DOMContentLoaded', function() {
     }, '-=0.3');
   }
 
-  /* Ghost name fades in subtly */
-  tl.to('.hero-name-ghost', { opacity:1, duration:0.6 }, '-=0.5');
 
   /* Bottom columns slide up */
   tl.to('.hero-inner .g-hidden', { opacity:1, duration:0.5 }, 0.2);
